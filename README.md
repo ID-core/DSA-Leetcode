@@ -18,18 +18,18 @@ This repository contains my solutions to various LeetCode problems. The solution
 ## Problems Covered
 
 ### Array Problems
-1. **Two Sum** - [Problem Link](https://leetcode.com/problems/two-sum/)
-2. **Best Time to Buy and Sell Stock** - [Problem Link](https://leetcode.com/problems/best-time-to-buy-and-sell-stock/description/)
-3. **Find the Duplicate Number** - [Problem Link](https://leetcode.com/problems/find-the-duplicate-number/description/)
-4. **Product of Array Except Self** - [Problem Link](https://leetcode.com/problems/product-of-array-except-self/description/)
-5. **Maximum Subarray** - [Problem Link](https://leetcode.com/problems/maximum-subarray/description/)
-6. **Maximum Product Subarray** - [Problem Link](https://leetcode.com/problems/maximum-product-subarray/description/)
+- **1. Two Sum** - [Problem Link](https://leetcode.com/problems/two-sum/)
+- **121. Best Time to Buy and Sell Stock** - [Problem Link](https://leetcode.com/problems/best-time-to-buy-and-sell-stock/description/)
+- **287. Find the Duplicate Number** - [Problem Link](https://leetcode.com/problems/find-the-duplicate-number/description/)
+- **238. Product of Array Except Self** - [Problem Link](https://leetcode.com/problems/product-of-array-except-self/description/)
+- **53. Maximum Subarray** - [Problem Link](https://leetcode.com/problems/maximum-subarray/description/)
+- **152. Maximum Product Subarray** - [Problem Link](https://leetcode.com/problems/maximum-product-subarray/description/)
 
 ### Linked List Problems
-7. **Add Two Numbers** - [Problem Link](https://leetcode.com/problems/add-two-numbers/)
+- **2. Add Two Numbers** - [Problem Link](https://leetcode.com/problems/add-two-numbers/)
 
 ### String Problems
-8. **Roman to Integer** - [Problem Link](https://leetcode.com/problems/roman-to-integer/description/)
+- **13. Roman to Integer** - [Problem Link](https://leetcode.com/problems/roman-to-integer/description/)
 
 ## How to Use
 
