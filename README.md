@@ -14,7 +14,7 @@ Each solution includes:
 
 1. Browse the .txt files to view solutions.  
 2. Each solution includes a direct LeetCode problem link.  
-3. Solutions are in **Java** and include explanatory comments.
+3. Solutions are in Java and include explanatory comments.
 
 ## Solutions Format
 
