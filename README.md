@@ -1,6 +1,4 @@
-# DSA-Leetcode
-
-A collection of Data Structures and Algorithms (DSA) solutions from LeetCode problems, implemented in **Java**.
+This is a collection of Data Structures and Algorithms (DSA) solutions from LeetCode problems, implemented in **Java**.
 
 ## About This Project
 
