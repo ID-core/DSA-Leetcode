@@ -13,18 +13,20 @@ This repository contains my solutions to various LeetCode problems. The solution
 
 - **Details.txt** - List of problems covered with their LeetCode links
 - **Dpp1.txt** - Java solutions for multiple LeetCode problems
-- **Dpp2.txt** - Additional solutions (to be added)
+- **Dpp2.txt** - Placeholder for additional solutions
 
 ## Problems Covered
 
 ### Array Problems
 1. **Two Sum** - [Problem Link](https://leetcode.com/problems/two-sum/)
-2. **Add Two Numbers** - [Problem Link](https://leetcode.com/problems/add-two-numbers/)
-3. **Best Time to Buy and Sell Stock** - [Problem Link](https://leetcode.com/problems/best-time-to-buy-and-sell-stock/description/)
-4. **Find the Duplicate Number** - [Problem Link](https://leetcode.com/problems/find-the-duplicate-number/description/)
-5. **Product of Array Except Self** - [Problem Link](https://leetcode.com/problems/product-of-array-except-self/description/)
-6. **Maximum Subarray** - [Problem Link](https://leetcode.com/problems/maximum-subarray/description/)
-7. **Maximum Product Subarray** - [Problem Link](https://leetcode.com/problems/maximum-product-subarray/description/)
+2. **Best Time to Buy and Sell Stock** - [Problem Link](https://leetcode.com/problems/best-time-to-buy-and-sell-stock/description/)
+3. **Find the Duplicate Number** - [Problem Link](https://leetcode.com/problems/find-the-duplicate-number/description/)
+4. **Product of Array Except Self** - [Problem Link](https://leetcode.com/problems/product-of-array-except-self/description/)
+5. **Maximum Subarray** - [Problem Link](https://leetcode.com/problems/maximum-subarray/description/)
+6. **Maximum Product Subarray** - [Problem Link](https://leetcode.com/problems/maximum-product-subarray/description/)
+
+### Linked List Problems
+7. **Add Two Numbers** - [Problem Link](https://leetcode.com/problems/add-two-numbers/)
 
 ### String Problems
 8. **Roman to Integer** - [Problem Link](https://leetcode.com/problems/roman-to-integer/description/)
