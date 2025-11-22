@@ -1,0 +1,29 @@
+----------------------------------------------------------- Dpp1.txt -----------------------------------------------------------
+
+// 1. Two Sum
+// https://leetcode.com/problems/two-sum/
+
+// 2. Add Two Numbers
+// https://leetcode.com/problems/add-two-numbers/
+
+// 121. Best Time to Buy and Sell Stock
+// https://leetcode.com/problems/best-time-to-buy-and-sell-stock/description/
+
+// 287. Find the Duplicate Number
+// https://leetcode.com/problems/find-the-duplicate-number/description/
+
+// 238. Product of Array Except Self
+// https://leetcode.com/problems/product-of-array-except-self/description/
+
+// 53. Maximum Subarray
+// https://leetcode.com/problems/maximum-subarray/description/
+
+// 152. Maximum Product Subarray
+// https://leetcode.com/problems/maximum-product-subarray/description/
+
+// 13. Roman to Integer
+// https://leetcode.com/problems/roman-to-integer/description/
+
+----------------------------------------------------------- Dpp2.txt -----------------------------------------------------------
+
+//

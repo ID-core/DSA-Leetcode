@@ -1,0 +1,237 @@
+// 1. Two Sum
+// https://leetcode.com/problems/two-sum/
+
+class Solution {
+    public int[] twoSum(int[] nums, int target) {
+              for (int i = 0; i < nums.length; i++) {
+            for (int j = i + 1; j < nums.length; j++) {
+
+                // Checking if the two numbers add up to target
+                if (nums[i] + nums[j] == target) {
+                    return new int[] { i, j };
+                }
+            }
+        }
+
+        return new int[] {};
+    }
+}
+
+
+// 2. Add Two Numbers
+// https://leetcode.com/problems/add-two-numbers/
+
+class Solution {
+    public ListNode addTwoNumbers(ListNode l1, ListNode l2) {
+        ListNode dummy = new ListNode(0);  // start node
+        ListNode current = dummy;
+        int carry = 0;
+
+        while (l1 != null || l2 != null || carry != 0) {
+
+            int sum = carry;
+
+            if (l1 != null) {
+                sum += l1.val;
+                l1 = l1.next;
+            }
+
+            if (l2 != null) {
+                sum += l2.val;
+                l2 = l2.next;
+            }
+
+            carry = sum / 10;             // new carry
+            int digit = sum % 10;         // current digit
+
+            current.next = new ListNode(digit);
+            current = current.next;
+        }
+
+        return dummy.next;   // final result
+    }
+}
+
+
+
+// 121. Best Time to Buy and Sell Stock
+// https://leetcode.com/problems/best-time-to-buy-and-sell-stock/description/
+
+class Solution {
+    public int maxProfit(int[] prices) {
+        int minPrice = prices[0];
+        int maxProfit = 0;
+
+        for (int i = 1; i < prices.length; i++) {
+            if (prices[i] < minPrice) {
+                minPrice = prices[i];
+            } else {
+                int profit = prices[i] - minPrice;
+                if (profit > maxProfit) {
+                    maxProfit = profit;
+                }
+            }
+        }
+
+        return maxProfit;
+    }
+}
+
+
+
+// 287. Find the Duplicate Number
+// https://leetcode.com/problems/find-the-duplicate-number/description/
+
+class Solution {
+    public int findDuplicate(int[] nums) {
+        int slow = nums[0];
+        int fast = nums[nums[0]];
+
+        // Phase 1: Find the intersection point
+        while (slow != fast) {
+            slow = nums[slow];
+            fast = nums[nums[fast]];
+        }
+
+        // Phase 2: Find the entrance to the cycle
+        fast = 0;
+        while (slow != fast) {
+            slow = nums[slow];
+            fast = nums[fast];
+        }
+
+        return slow; // or fast
+    }
+}
+
+
+
+// 238. Product of Array Except Self
+// https://leetcode.com/problems/product-of-array-except-self/description/
+
+class Solution {
+    public int[] productExceptSelf(int[] nums) {
+        int n = nums.length;
+        int[] answer = new int[n];
+
+        // Building prefix products
+        answer[0] = 1;
+        for (int i = 1; i < n; i++) {
+            answer[i] = answer[i - 1] * nums[i - 1];
+        }
+
+        // Multiplying by suffix products
+        int suffix = 1;
+        for (int i = n - 1; i >= 0; i--) {
+            answer[i] = answer[i] * suffix;
+            suffix *= nums[i];
+        }
+
+        return answer;
+    }
+}
+
+
+
+// 53. Maximum Subarray
+// https://leetcode.com/problems/maximum-subarray/description/
+
+class Solution {
+    public int maxSubArray(int[] nums) {
+        int maxSum = nums[0];
+        int currentSum = 0;
+
+        for (int num : nums) {
+            //can also be like
+            //for (int i=0; i<nums.length; i++)
+            // int num = nums[i];
+            currentSum += num;
+            maxSum = Math.max(maxSum, currentSum);
+
+            if (currentSum < 0) {
+                currentSum = 0;
+            }
+        }
+
+        return maxSum;
+    }
+}
+
+
+
+// 152. Maximum Product Subarray
+// https://leetcode.com/problems/maximum-product-subarray/description/
+
+class Solution {
+    public int maxProduct(int[] nums) {
+        int maxproduct = nums[0];
+        int currentproduct = 1;
+
+        // Left to right
+        for (int num : nums) {
+            currentproduct *= num;
+            maxproduct = Math.max(maxproduct, currentproduct);
+            if (num == 0) currentproduct = 1;
+        }
+
+        currentproduct = 1;
+
+        // Right to left
+        for (int i = nums.length - 1; i >= 0; i--) {
+            currentproduct *= nums[i];
+            maxproduct = Math.max(maxproduct, currentproduct);
+            if (nums[i] == 0) currentproduct = 1;
+        }
+
+        return maxproduct;
+    }
+}
+
+
+
+// 13. Roman to Integer
+// https://leetcode.com/problems/roman-to-integer/description/
+
+//logic for this ques- If current number is smaller than previous number then we will subtract,else we will add
+
+class Solution {
+    public int romanToInt(String s) {
+
+        int total = 0;   // final answer
+        int prev = 0;    // value of previous symbol
+
+        // Loop from right to left (easier to handle subtraction rule)
+        for (int i = s.length() - 1; i >= 0; i--) {
+            int value = getValue(s.charAt(i));
+
+            // If current value is smaller than previous → subtract
+            if (value < prev) {
+                total -= value;
+            } else {  // else add
+                total += value;
+            }
+
+            prev = value;  // update previous value
+        }
+
+        return total;
+    }
+
+    // Convert Roman character to its value (easy helper function)
+    private int getValue(char c) {
+        switch (c) {
+            case 'I': return 1;
+            case 'V': return 5;
+            case 'X': return 10;
+            case 'L': return 50;
+            case 'C': return 100;
+            case 'D': return 500;
+            case 'M': return 1000;
+            default: return 0;
+        }
+    }
+}
+
+
+
+//
