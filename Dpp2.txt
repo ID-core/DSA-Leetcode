@@ -39,3 +39,21 @@ class Solution {
        return -1;
     }
 }
+
+
+
+// 172. Factorial Trailing Zeroes
+// https://leetcode.com/problems/factorial-trailing-zeroes/description/
+
+//Trailing zeros depend on the number of complete pairs (2, 5). But because: There are ALWAYS more 2s than 5s, the number of pairs = number of 5s. So we only count 5s, because 2s are never the limiting factor.
+
+class Solution {
+    public int trailingZeroes(int n) {
+        int count = 0;
+        while (n > 0) {
+            n /= 5;
+            count += n;
+        }
+        return count;
+    }
+}
