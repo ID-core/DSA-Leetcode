@@ -1,0 +1,78 @@
+// 435. Non-Overlapping Interval
+// https://leetcode.com/problems/non-overlapping-intervals/description/
+
+
+class Solution {
+    public int eraseOverlapIntervals(int[][] intervals) {
+
+        // Step 1: sort by end time
+        Arrays.sort(intervals, (a, b) -> a[1] - b[1]);
+
+        int count = 0;
+        int prevEnd = intervals[0][1]; // end of last non-overlapping interval
+
+        for (int i = 1; i < intervals.length; i++) {
+
+            // if overlapping then remove current
+            if (intervals[i][0] < prevEnd) {
+                count++;
+            } else {
+                // no overlap then accept interval
+                prevEnd = intervals[i][1];
+            }
+        }
+
+        return count;
+    }
+}
+
+
+
+// 73. Set Matrix Zeroes
+// https://leetcode.com/problems/set-matrix-zeroes/
+
+
+class Solution {
+    public void setZeroes(int[][] matrix) {
+        int rows = matrix.length;
+        int columns = matrix[0].length;
+
+        int zero_row[] = new int[rows];
+        int zero_col[] = new int[columns];
+
+        // FIRST PASS: Mark rows and columns
+        for (int i = 0; i < rows; i++) {
+            for (int j = 0; j < columns; j++) {
+                if (matrix[i][j] == 0) {
+                    zero_row[i] = 1;
+                    zero_col[j] = 1;
+                }
+            }
+        }
+
+        // SECOND PASS: Zero marked rows
+        for (int i = 0; i < rows; i++) {
+            if (zero_row[i] == 1) {
+                for (int j = 0; j < columns; j++) {
+                    matrix[i][j] = 0;
+                }
+            }
+        }
+
+        // THIRD PASS: Zero marked columns
+        for (int j = 0; j < columns; j++) {
+            if (zero_col[j] == 1) {
+                for (int i = 0; i < rows; i++) {
+                    matrix[i][j] = 0;
+                }
+            }
+        }
+    }
+}
+
+
+
+// 
+// https://leetcode.com/problems/
+
+
