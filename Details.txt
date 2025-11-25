@@ -26,4 +26,31 @@
 
 ----------------------------------------------------------- Dpp2.txt -----------------------------------------------------------
 
-//
+// 153. Find Minimum in Rotated Sorted Array
+// https://leetcode.com/problems/find-minimum-in-rotated-sorted-array/description/
+
+// 33. Search in Rotated Sorted Array
+// https://leetcode.com/problems/search-in-rotated-sorted-array/description/
+
+// 172. Factorial Trailing Zeroes
+// https://leetcode.com/problems/factorial-trailing-zeroes/description/
+
+// 57. Insert Interval
+// https://leetcode.com/problems/insert-interval/
+
+// 56. Merge Interval
+// https://leetcode.com/problems/merge-intervals/description/
+
+----------------------------------------------------------- Dpp3.txt -----------------------------------------------------------
+
+// 435. Non-Overlapping Interval
+// https://leetcode.com/problems/non-overlapping-intervals/description/
+
+// 73. Set Matrix Zeroes
+// https://leetcode.com/problems/set-matrix-zeroes/
+
+// 54. Spiral Matrix
+// https://leetcode.com/problems/spiral-matrix/description/
+
+// 59. Spiral Matrix II
+// https://leetcode.com/problems/spiral-matrix-ii/description/
