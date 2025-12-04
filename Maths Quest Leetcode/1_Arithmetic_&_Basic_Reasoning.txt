@@ -1,0 +1,68 @@
+// Q1. Can Make Arithmetic Progression From Sequence
+// https://leetcode.com/problems/can-make-arithmetic-progression-from-sequence/?envType=problem-list-v2&envId=maths-m1-arithmetic-basic-reasoning
+
+
+class Solution {
+    public boolean canMakeArithmeticProgression(int[] arr) {
+               // Handle edge cases for arrays with less than 2 elements
+        if (arr.length <= 2) {
+            return true;
+        }
+        Arrays.sort(arr);
+         int commonDifference = arr[1] - arr[0];
+
+        // Iterate through the rest of the array to ensure the common difference is maintained
+        for (int i = 2; i < arr.length; i++) {
+            if (arr[i] - arr[i - 1] != commonDifference) {
+                return false; // If a different difference is found, it's not an AP
+            }
+        }
+
+        // If all differences are consistent, it's an arithmetic progression
+        return true;
+    }
+}
+
+
+
+// Q2. Find the Pivot Integer
+// https://leetcode.com/problems/find-the-pivot-integer/?envType=problem-list-v2&envId=maths-m1-arithmetic-basic-reasoning
+
+
+class Solution {
+    public int pivotInteger(int n) {
+        // Calculate the total sum of integers from 1 to n
+        int totalSum = (n * (n + 1)) / 2;
+        // Calculate the integer part of the square root of the total sum
+        int x = (int) Math.sqrt(totalSum);
+        // Check if x * x equals the total sum (meaning it's a perfect square)
+        // and if x is within the valid range [1, n]
+        if (x * x == totalSum && x <= n && x >= 1) {
+            return x;
+        } else {
+            return -1;
+        }
+    }
+}
+
+
+
+// Q3. Palindrome number
+// https://leetcode.com/problems/palindrome-number/description/?envType=problem-list-v2&envId=maths-m1-arithmetic-basic-reasoning
+
+
+class Solution {
+    public boolean isPalindrome(int x) {
+        if (x < 0) {
+            return false; // Negative numbers are not palindromes
+        }
+        int original = x;
+        int reversed = 0;
+        while (x > 0) {
+            int digit = x % 10;
+            reversed = reversed * 10 + digit;
+            x /= 10;
+        }
+        return original == reversed;
+    }
+}
