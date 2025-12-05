@@ -16,3 +16,30 @@ class Solution {
     return count;
     }
 }
+
+
+
+// 338. Counting Bits
+// https://leetcode.com/problems/counting-bits/description/
+
+
+class Solution {
+    public int[] countBits(int n) {
+        int[] ans = new int[n+1];
+        int count=0;
+        for(int a=0;a <=n;a++)
+        {
+            String binaryString = Integer.toBinaryString(a);
+            for(int i=0;i<binaryString.length();i++)
+            {
+                if(binaryString.charAt(i)=='1')
+                {
+                    count++;
+                }
+            }
+        ans[a] = count;
+        count=0;
+        }
+        return ans;
+    }
+}
