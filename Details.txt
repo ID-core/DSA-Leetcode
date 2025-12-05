@@ -66,3 +66,23 @@
 ----------------------------------------------------------- Bit Manipulation -----------------------------------------------------------
 ----------------------------------------------------------- Dpp4.txt -----------------------------------------------------------
 
+// 191. Number of 1 Bits
+// https://leetcode.com/problems/number-of-1-bits/description/
+
+// 338. Counting Bits
+// https://leetcode.com/problems/counting-bits/description/
+
+// 268. Missing Number
+// https://leetcode.com/problems/missing-number/
+
+// 7. Reverse Integer
+// https://leetcode.com/problems/reverse-integer/
+
+// 190. Reverse Solution
+// https://leetcode.com/problems/reverse-bits/description/
+
+// 371. Sum of Two Integers
+// https://leetcode.com/problems/sum-of-two-integers/
+
+// 3211. Generate Binary Strings Without Adjacent Zeros
+// https://leetcode.com/problems/generate-binary-strings-without-adjacent-zeros/description/
