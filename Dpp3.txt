@@ -194,3 +194,42 @@ class Solution {
         }
     }
 }
+
+
+
+// 682. Basketball Game
+// https://leetcode.com/problems/baseball-game/description/?envType=problem-list-v2&envId=array
+
+
+class Solution {
+    public int calPoints(String[] operations) {
+        int n = operations.length;
+        int[] record = new int[n];  // scores stored as integers
+        int index = 0;              // points to next empty position
+
+        for (String op : operations) {
+            if (op.equals("C")) {
+                index--;  // remove last valid score
+            }
+            else if (op.equals("D")) {
+                record[index] = 2 * record[index - 1];  // double last score
+                index++;
+            }
+            else if (op.equals("+")) {
+                record[index] = record[index - 1] + record[index - 2]; // sum of last 2
+                index++;
+            }
+            else {
+                record[index] = Integer.parseInt(op);  // push number
+                index++;
+            }
+        }
+        int sum = 0;
+        for (int i = 0; i < index; i++) {
+            sum += record[i];
+        }
+        return sum;
+    }
+}
+
+
