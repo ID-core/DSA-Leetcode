@@ -64,6 +64,7 @@ class Solution {
 }
 
 
+
 // 7. Reverse Integer
 // https://leetcode.com/problems/reverse-integer/
 
@@ -95,6 +96,7 @@ class Solution {
 }
 
 
+
 // 190. Reverse Solution
 // https://leetcode.com/problems/reverse-bits/description/
 
@@ -123,3 +125,20 @@ class Solution {
 //     }
 //     return result;
 // }}
+
+
+
+// 371. Sum of Two Integers
+// https://leetcode.com/problems/sum-of-two-integers/
+
+
+class Solution {
+    public int getSum(int a, int b) {
+        while (b != 0) {
+            int carry = a & b;   // & finds where carry is needed
+            a = a ^ b;           // ^ handles bitwise addition without carrying
+            b = carry << 1;      // shift carry
+        }
+        return a;
+    }
+}
