@@ -62,3 +62,34 @@ class Solution {
         return actual_sum- array_sum;
     }
 }
+
+
+// 7. Reverse Integer
+// https://leetcode.com/problems/reverse-integer/
+
+
+class Solution {
+    public int reverse(int x) {
+        StringBuilder sb = new StringBuilder();
+        sb.append(x);
+
+        // Reverse digits but keep sign
+        if (x < 0) {
+            sb.deleteCharAt(0);
+            sb.reverse();
+            String result = "-" + sb.toString();
+            try {
+                return Integer.parseInt(result);
+            } catch (Exception e) {
+                return 0;
+            }
+        } else {
+            sb.reverse();
+            try {
+                return Integer.parseInt(sb.toString());
+            } catch (Exception e) {
+                return 0;
+            }
+        }
+    }
+}
