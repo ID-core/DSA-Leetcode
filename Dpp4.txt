@@ -43,3 +43,22 @@ class Solution {
         return ans;
     }
 }
+
+
+
+// 268. Missing Number
+// https://leetcode.com/problems/missing-number/
+
+
+//approach :Sum of first n natural numbers = n(n+1)/2. Now if we subtract the sum of given array elements, the remainder must be the missing number.
+class Solution {
+    public int missingNumber(int[] nums) {
+        int array_sum=0;
+        int actual_sum = nums.length * (nums.length+1)/2;
+        for(int i=0; i<nums.length; i++)
+        {
+            array_sum += nums[i];
+        }
+        return actual_sum- array_sum;
+    }
+}
