@@ -69,3 +69,44 @@ class Solution {
 
     }
 }
+
+
+// 424. Longest Repeating Character Replacement
+// https://leetcode.com/problems/longest-repeating-character-replacement/
+
+// This code finds the length of the longest substring where we can make all letters the same by changing at most k characters
+// We use a sliding window from left to right, keeping track of the count of each letter in the window
+// maxFreq stores the count of the most frequent letter in the current windo
+// If the number of letters to change (window length - maxFreq) is more than k,we shrink the window from the left
+// We keep updating the maximum valid window length as the answer
+
+class Solution {
+    public int characterReplacement(String s, int k) {
+
+        int[] count = new int[26]; // count of A-Z
+        int left = 0;
+        int maxFreq = 0; // max freq of any char in window
+        int result = 0;
+
+        for (int right = 0; right < s.length(); right++) {
+            char ch = s.charAt(right);
+            count[ch - 'A']++;
+
+            // update the max frequency char in the window
+            maxFreq = Math.max(maxFreq, count[ch - 'A']);
+
+            int window = right - left + 1;
+
+            // if we need more than k changes → shrink
+            if (window - maxFreq > k) {
+                count[s.charAt(left) - 'A']--;
+                left++;
+                window--;
+            }
+
+            result = Math.max(result, window);
+        }
+
+        return result;
+    }
+}
