@@ -15,3 +15,33 @@ class Solution {
         return Arrays.equals(a,b);
     }
 }
+
+
+
+// 49. Group Anagrams
+// https://leetcode.com/problems/group-anagrams/description/
+
+class Solution {
+    public List<List<String>> groupAnagrams(String[] strs) {
+       HashMap<String, List<String>> hash = new HashMap<>();
+    //    Create a HashMap where each key is a sorted word, and each value is a list of strings that are anagrams of each other
+
+    for(String s: strs) // for each string s from array strs
+    {
+        char arr[]= s.toCharArray();
+        Arrays.sort(arr);
+
+        String key = new String(arr); //converting char into string again
+        if(!hash.containsKey(key))
+        {
+            hash.put(key, new ArrayList<>());
+        }
+        hash.get(key).add(s);
+    }
+    return new ArrayList<>(hash.values());
+    }
+}
+
+
+
+//
