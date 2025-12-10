@@ -86,3 +86,12 @@
 
 // 3211. Generate Binary Strings Without Adjacent Zeros
 // https://leetcode.com/problems/generate-binary-strings-without-adjacent-zeros/description/
+
+
+----------------------------------------------------------- Strings -----------------------------------------------------------
+----------------------------------------------------------- Dpp5.txt -----------------------------------------------------------
+
+// 242. Valid Anagram
+// https://leetcode.com/problems/valid-anagram/description/
+
+//

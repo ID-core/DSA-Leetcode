@@ -1,0 +1,17 @@
+// 242. Valid Anagram
+// https://leetcode.com/problems/valid-anagram/description/
+
+
+class Solution {
+    public boolean isAnagram(String s, String t) {
+        char a[] = s.toCharArray(); //convert strting s to charater and store them as array in 'a'
+        char b[] = t.toCharArray();
+        if(a.length != b.length)
+        {
+            return false;
+        }
+        Arrays.sort(a);
+        Arrays.sort(b);
+        return Arrays.equals(a,b);
+    }
+}
