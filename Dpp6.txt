@@ -12,3 +12,31 @@ class Solution {
         }
     }
 }
+
+
+
+// 541. Reverse String II
+// https://leetcode.com/problems/reverse-string-ii/description/?envType=problem-list-v2&envId=string
+
+class Solution {
+    public String reverseStr(String s, int k) {
+        char[] arr = s.toCharArray();
+        int n = arr.length;
+        char temp;
+
+        // process each 2k block
+        for (int i = 0; i < n; i += 2 * k) {
+            // calculate the end of the block safely
+            int right = Math.min(i + k - 1, n - 1);
+
+            // reverse the block using only i
+            for (int j = 0; j < (right - i + 1) / 2; j++) {
+                temp = arr[i + j];
+                arr[i + j] = arr[right - j];
+                arr[right - j] = temp;
+            }
+        }
+
+        return new String(arr);
+    }
+}
