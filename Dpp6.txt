@@ -40,3 +40,40 @@ class Solution {
         return new String(arr);
     }
 }
+
+
+
+// 1668. Maximum Repeating Substring
+// https://leetcode.com/problems/maximum-repeating-substring/description/?envType=problem-list-v2&envId=string
+
+class Solution {
+    public int maxRepeating(String sequence, String word) {
+        int k = 0;
+        String repeated = word;
+        // Keep checking if word repeated k+1 times is a substring
+        // Increment k until it is no longer a substring
+        while (sequence.contains(repeated)) {
+            k++;
+            repeated += word; // append word again
+        }
+        return k;
+    }
+}
+
+
+
+// 3210. Find the Encrypted String
+// https://leetcode.com/problems/find-the-encrypted-string/description/?envType=problem-list-v2&envId=string
+
+class Solution {
+    public String getEncryptedString(String s, int k) {
+        int n = s.length();
+        StringBuilder sb = new StringBuilder();
+        for(int i=0;i<n;i++)
+        {
+            int ind = (i+k)%n; //cyclic shifting approach
+            sb.append(s.charAt(ind));
+        }
+        return sb.toString();
+    }
+}
