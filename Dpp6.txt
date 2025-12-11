@@ -131,3 +131,64 @@ class Solution {
         return true;
     }
 }
+
+
+// 1807. Evaluate the bracket pairs of a string
+// https://leetcode.com/problems/evaluate-the-bracket-pairs-of-a-string/description/?envType=problem-list-v2&envId=string
+
+class Solution {
+    public String evaluate(String s, List<List<String>> knowledge) {
+        //Making map
+        Map<String, String> map = new HashMap<>();
+
+        //putting each value inside it
+        for(int i =0; i< knowledge.size(); i++)
+        {
+            List<String> pair = knowledge.get(i);
+            String key = pair.get(0);
+            String value = pair.get(1);
+            map.put(key,value);
+        }
+
+        // Variable for storing anwers
+        StringBuilder key = new StringBuilder();
+        StringBuilder ans = new StringBuilder();
+        boolean readingkey = false;
+
+        for(int i=0; i<s.length(); i++)
+        {
+            char c= s.charAt(i);
+            if(c == '(')
+            {
+                key.setLength(0); // Clear all content ok key, before starting new one
+                readingkey = true;
+            }
+            else if (c == ')')
+            {
+                String keytext= key.toString();
+                if(map.containsKey(keytext))
+                {
+                    ans.append(map.get(keytext));
+                }
+                else
+                {ans.append("?");}
+                readingkey = false;
+            }
+            /* We go through the string character by character.
+            When we see '(', we set readingkey = true to start reading a key.
+            Each character inside the parentheses is added to the key using key.append(c).
+            For example, for "(name)", we read 'n', 'a', 'm', 'e' one by one,
+            so key becomes "n", then "na", then "nam", and finally "name".
+            When we see ')', we set readingkey = false, meaning we have collected the full key "name"
+            and can now look up its value in the map.*/
+
+            else if(readingkey) // If we are reading inside parentheses, we are building key char by char
+            {key.append(c);}
+
+            else
+            {ans.append(c);}
+        }
+
+        return ans.toString();
+    }
+}

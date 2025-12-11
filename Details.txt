@@ -118,3 +118,6 @@
 
 // 468. Validate IP Address
 // https://leetcode.com/problems/validate-ip-address/description/?envType=problem-list-v2&envId=string
+
+// 1807. Evaluate the bracket pairs of a string
+// https://leetcode.com/problems/evaluate-the-bracket-pairs-of-a-string/description/?envType=problem-list-v2&envId=string
