@@ -121,3 +121,6 @@
 
 // 1807. Evaluate the bracket pairs of a string
 // https://leetcode.com/problems/evaluate-the-bracket-pairs-of-a-string/description/?envType=problem-list-v2&envId=string
+
+// 2211. Count Collisions on a Road
+// https://leetcode.com/problems/count-collisions-on-a-road/?envType=problem-list-v2&envId=string

@@ -192,3 +192,42 @@ class Solution {
         return ans.toString();
     }
 }
+
+
+
+// 2211. Count Collisions on a Road
+// https://leetcode.com/problems/count-collisions-on-a-road/?envType=problem-list-v2&envId=string
+
+/* Logic:
+ We skip leading 'L' cars (they move left forever) and trailing 'R' cars
+ (they move right forever) because they can never collide. Every moving car
+ ('L' or 'R') inside the remaining middle zone is guaranteed to collide once:
+ an R hitting L gives +2 because both are moving (+1 each), and any moving
+ car hitting a stopped car gives +1. Thus, counting all moving cars inside
+ this middle zone directly gives the total number of collisions.
+*/
+
+class Solution {
+    public int countCollisions(String directions) {
+        char[] arr = directions.toCharArray();
+        int n = directions.length();
+        int collision = 0;
+        int left = 0;
+        int right = n - 1;
+        while (left < n && arr[left] == 'L') //for avoiding leading L'sas they go forever Left
+        {
+            left++;
+        }
+        while (right >= 0 && arr[right] == 'R') //for avoiding trailing R's as they go forever right
+        {
+            right--;
+        }
+        // counting total number of cars inside collison zone(collison zone: removing leading l and trailing r)
+
+        for (int i = left; i <= right; i++) {
+            if (arr[i] == 'L' || arr[i] == 'R')
+                collision++;
+        }
+        return collision;
+    }
+}
