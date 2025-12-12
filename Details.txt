@@ -104,7 +104,7 @@
 // https://leetcode.com/problems/longest-repeating-character-replacement/
 
 
------------------------------------------------------------ Practice with Strings Problems(additional) -----------------------------------------------------------
+------------------------------------------------- Practice with Strings Problems(additional) -----------------------------------
 ----------------------------------------------------------- Dpp6.txt -----------------------------------------------------------
 
 // 344. Reverse String
@@ -124,3 +124,8 @@
 
 // 2211. Count Collisions on a Road
 // https://leetcode.com/problems/count-collisions-on-a-road/?envType=problem-list-v2&envId=string
+
+------------------------------------------------- Hash Table (additional) in Dpp6.txt only -----------------------------------
+
+// 17. Letter Combinations of a Phone number
+// https://leetcode.com/problems/letter-combinations-of-a-phone-number/?envType=problem-list-v2&envId=hash-table

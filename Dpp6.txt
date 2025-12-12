@@ -231,3 +231,48 @@ class Solution {
         return collision;
     }
 }
+
+
+
+// 17. Letter Combinations of a Phone number
+// https://leetcode.com/problems/letter-combinations-of-a-phone-number/?envType=problem-list-v2&envId=hash-table
+
+class Solution {
+    public List<String> letterCombinations(String digits) {
+        int n = digits.length();
+        List<String> ans = new ArrayList<>();
+        String[] map = {
+                "", "", "abc", "def", "ghi",
+                "jkl", "mno", "pqrs", "tuv", "wxyz"
+        };
+        ans.add(""); // starting with one empty string
+        if (digits.length() == 0)
+            return ans;
+
+        ans = convertStringtoList(map[digits.charAt(0) - '0']);
+
+        //combining with rest one-by-one
+        for (int i = 1; i < digits.length(); i++) {
+            String next = map[digits.charAt(i) - '0']; //second string
+            List<String> temp = new ArrayList<>();
+
+            for (String s : ans) {
+                //for letters of second string
+                for (int j = 0; j < next.length(); j++) {
+                    char ch = next.charAt(j);
+                    temp.add(s + ch);
+                }
+            }
+            ans = temp;
+        }
+        return ans;
+    }
+    //helper function to convert string to list
+    private List<String> convertStringtoList(String s) {
+        List<String> newlist = new ArrayList<>();
+        for (int i = 0; i < s.length(); i++) {
+            newlist.add("" + s.charAt(i));
+        }
+        return newlist;
+    }
+}
