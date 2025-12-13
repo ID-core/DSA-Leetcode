@@ -129,3 +129,10 @@
 
 // 17. Letter Combinations of a Phone number
 // https://leetcode.com/problems/letter-combinations-of-a-phone-number/?envType=problem-list-v2&envId=hash-table
+
+
+----------------------------------------------------------- Backtracking -----------------------------------------------------------
+----------------------------------------------------------- Dpp7.txt -----------------------------------------------------------
+
+// 46. Permutations
+// https://leetcode.com/problems/permutations/?envType=problem-list-v2&envId=backtracking
