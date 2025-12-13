@@ -121,5 +121,73 @@ class Solution {
 
 
 
+// 37. Sudoku Solver
+// https://leetcode.com/problems/sudoku-solver
 
+class Solution {
+    public boolean isSafe(char[][] board, int row, int col, int number) {
+        char num = (char) (number + '0');
 
+        // Checking row and column
+        for (int i = 0; i < 9; i++) {
+            if (board[i][col] == num)
+                return false;
+            if (board[row][i] == num)
+                return false;
+        }
+        //for grid number
+        // formula to find the grid number
+        int sr = (row / 3) * 3;
+        int sc = (col / 3) * 3;
+
+        for (int i = sr; i < sr + 3; i++) {
+            for (int j = sc; j < sc + 3; j++) {
+                if (board[i][j] == num)
+                    return false;
+            }
+        }
+
+        return true;
+    }
+
+    // Backtracking helper
+    public boolean helper(char[][] board, int row, int col) {
+
+        // Finished all rows -> solved
+        if (row == 9)
+            return true;
+
+        int nrow, ncol;
+        if (col != 8) {
+            nrow = row;
+            ncol = col + 1;
+        } else {
+            nrow = row + 1;
+            ncol = 0;
+        }
+
+        // If already filled, moving to next cell
+        if (board[row][col] != '.') {
+            return helper(board, nrow, ncol);
+        }
+
+        // Trying digits 1 to 9
+        for (int i = 1; i <= 9; i++) {
+            if (isSafe(board, row, col, i)) {
+                board[row][col] = (char) (i + '0');
+
+                if (helper(board, nrow, ncol)) {
+                    return true;
+                }
+                board[row][col] = '.';
+            }
+        }
+
+        return false;
+    }
+
+    // Main function
+    public void solveSudoku(char[][] board) {
+        helper(board, 0, 0);
+    }
+}
