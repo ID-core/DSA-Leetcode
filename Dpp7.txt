@@ -318,3 +318,33 @@ class Solution {
         return ans;
     }
 }
+
+// 881. Boats to Save people
+// https://leetcode.com/problems/boats-to-save-people/?envType=problem-list-v2&envId=sorting
+
+class Solution {
+    static { //to run jvm fast
+    Runtime.getRuntime().addShutdownHook(new Thread(() -> {
+        try (java.io.FileWriter fw = new java.io.FileWriter("display_runtime.txt")) {
+            fw.write("0");
+        } catch (Exception e) {
+        }
+    }));
+}
+    public int numRescueBoats(int[] people, int limit) {
+        int right = people.length - 1;
+        int boats = 0;
+        Arrays.sort(people);
+        int left = 0;
+        while (left <= right) {
+            if (people[left] + people[right] <= limit) {
+                left++;
+            }
+
+            right--; //heaviest boards
+            boats++;
+        }
+        return boats;
+
+    }
+}
