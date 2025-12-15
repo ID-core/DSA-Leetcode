@@ -191,3 +191,36 @@ class Solution {
         helper(board, 0, 0);
     }
 }
+
+
+
+// 75. Set Colors
+// https://leetcode.com/problems/sort-colors/description/?envType=problem-list-v2&envId=sorting
+
+class Solution {
+    public void sortColors(int[] nums) {
+        int left = 0;
+        int right = nums.length - 1;
+        for (int i = 0; i <= right;) {
+            if (nums[i] == 0) {
+                swap(nums, i, left);
+                left++;
+                i++;
+            } else if (nums[i] == 1) {
+                i++;
+            } else //when nums[i] == 2
+            {
+                swap(nums, i, right);
+                right--;
+            }
+        }
+    }
+    private static void swap(int nums[], int i, int j) {
+        final int temp;
+        temp = nums[i];
+        nums[i] = nums[j];
+        nums[j] = temp;
+    }
+}
+
+
