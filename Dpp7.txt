@@ -319,6 +319,8 @@ class Solution {
     }
 }
 
+
+
 // 881. Boats to Save people
 // https://leetcode.com/problems/boats-to-save-people/?envType=problem-list-v2&envId=sorting
 
@@ -346,5 +348,35 @@ class Solution {
         }
         return boats;
 
+    }
+}
+
+
+
+// 888. Fair Cndy swap
+// https://leetcode.com/problems/fair-candy-swap/?envType=problem-list-v2&envId=sorting
+
+class Solution {
+    public int[] fairCandySwap(int[] aliceSizes, int[] bobSizes) {
+        int sumA = 0;
+        int sumB = 0;
+        //if alice gives x and bob gives y then alice-x+y == bob -y +x which gives: y-x = (alice+bob)/2
+        for (int a : aliceSizes)
+            sumA += a;
+        for (int b : bobSizes)
+            sumB += b;
+
+        int diff = (sumB - sumA) / 2;
+        Set<Integer> bobSet = new HashSet<>();
+        for (int b : bobSizes) {
+            bobSet.add(b);
+        }
+        for (int x : aliceSizes) { // x is candy size
+            int y = x + diff;
+            if (bobSet.contains(y)) {
+                return new int[] { x, y }; // return sizes
+            }
+        }
+        return new int[0];
     }
 }
