@@ -1,0 +1,30 @@
+// 876. Middle of the Linked List
+// https://leetcode.com/problems/middle-of-the-linked-list/description/
+
+class Solution {
+    public ListNode middleNode(ListNode head) {
+        ListNode slow = head;
+        ListNode fast = head;
+        while(fast!= null && fast.next!=null)
+        {
+            slow=slow.next;
+            fast=fast.next.next;
+        }
+        return slow;
+    }
+}
+
+
+
+// 206. Reverse Linked List
+// https://leetcode.com/problems/reverse-linked-list/description/
+
+
+
+// 234. Palindrome Linked List
+// https://leetcode.com/problems/palindrome-linked-list/description/
+
+
+
+// 92. Reverse Linked List II
+// https://leetcode.com/problems/reverse-linked-list-ii/description/
