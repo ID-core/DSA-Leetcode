@@ -39,7 +39,27 @@ class Solution {
 // 234. Palindrome Linked List
 // https://leetcode.com/problems/palindrome-linked-list/description/
 
+class Solution {
+    public boolean isPalindrome(ListNode head) {
+        ArrayList<Integer> list = new ArrayList<>();
+        while (head != null) {
+            list.add(head.val);
+            head = head.next;
+        }
+        int right = list.size() - 1;
+        for (int left = 0; left < right; left++) {
+
+            if (!list.get(left).equals(list.get(right))) {
+                return false;
+            }
+            right--;
+        }
+        return true;
+    }
+}
+
 
 
 // 92. Reverse Linked List II
 // https://leetcode.com/problems/reverse-linked-list-ii/description/
+
