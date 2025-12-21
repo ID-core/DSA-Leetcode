@@ -63,3 +63,31 @@ class Solution {
 // 92. Reverse Linked List II
 // https://leetcode.com/problems/reverse-linked-list-ii/description/
 
+class Solution {
+    public ListNode reverseBetween(ListNode head, int left, int right) {
+
+        if (head == null || left == right) return head;
+
+        ListNode dummy = new ListNode(0);
+        dummy.next = head;
+
+        // prev will point to (left - 1)th node
+        ListNode prev = dummy;
+        for (int i = 1; i < left; i++) {
+            prev = prev.next;
+        }
+
+        // current starts at left
+        ListNode current = prev.next;
+
+        // reverse between left and right
+        for (int i = 0; i < right - left; i++) {
+            ListNode next = current.next;
+            current.next = next.next;
+            next.next = prev.next; //forces the extracted node to point to front node
+            prev.next = next;
+        }
+
+        return dummy.next;
+    }
+}

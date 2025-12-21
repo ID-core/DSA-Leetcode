@@ -131,7 +131,7 @@
 // https://leetcode.com/problems/letter-combinations-of-a-phone-number/?envType=problem-list-v2&envId=hash-table
 
 
------------------------------------------------------------ Backtracking -----------------------------------------------------------
+----------------------------------------------------------- Backtracking -------------------------------------------------------
 ----------------------------------------------------------- Dpp7.txt -----------------------------------------------------------
 
 // 75. Set Colors
@@ -146,7 +146,7 @@
 
 
 ----------------------------------------------------------- Sorting -----------------------------------------------------------
------------------------------------------------------------ Dpp7.txt -----------------------------------------------------------
+----------------------------------------------------------- Dpp7.txt ----------------------------------------------------------
 
 // 75. Set Colors
 // https://leetcode.com/problems/sort-colors/description/?envType=problem-list-v2&envId=sorting
@@ -162,3 +162,19 @@
 
 // 881. Boats to Save people
 // https://leetcode.com/problems/boats-to-save-people/?envType=problem-list-v2&envId=sorting
+
+
+----------------------------------------------------------- Linked List --------------------------------------------------------
+----------------------------------------------------------- Dpp8.txt -----------------------------------------------------------
+
+// 876. Middle of the Linked List
+// https://leetcode.com/problems/middle-of-the-linked-list/description/
+
+// 206. Reverse Linked List
+// https://leetcode.com/problems/reverse-linked-list/description/
+
+// 234. Palindrome Linked List
+// https://leetcode.com/problems/palindrome-linked-list/description/
+
+// 92. Reverse Linked List II
+// https://leetcode.com/problems/reverse-linked-list-ii/description/
