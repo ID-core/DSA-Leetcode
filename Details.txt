@@ -181,3 +181,6 @@
 
 // 21. Merge two Sorted lists
 // https://leetcode.com/problems/merge-two-sorted-lists/description/
+
+// 141. Linked List Style
+// https://leetcode.com/problems/linked-list-cycle/

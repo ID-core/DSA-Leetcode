@@ -114,3 +114,26 @@ class Solution {
         }
     }
 }
+
+
+
+// 141. Linked List Style
+// https://leetcode.com/problems/linked-list-cycle/
+
+public class Solution {
+    public boolean hasCycle(ListNode head) {
+        ListNode slow = head;
+        ListNode fast = head;
+        if (head == null || head.next == null) //base case for empty list or single node
+            return false;
+
+        while (fast != null && fast.next != null) {
+            slow = slow.next;
+            fast = fast.next.next;
+
+            if (slow == fast)
+                return true;
+        }
+        return false;
+    }
+}
