@@ -202,3 +202,30 @@ class Solution {
         return prev;
     }
 }
+
+
+
+// 19. Remove Nth Node From End of List
+// https://leetcode.com/problems/remove-nth-node-from-end-of-list/description/
+
+class Solution {
+    public ListNode removeNthFromEnd(ListNode head, int n) {
+        ListNode dummy = new ListNode(0); // dummy node to delete the necessary node
+        ListNode slow = dummy;
+        ListNode fast = dummy;
+        dummy.next = head; //connecting dummy to head
+
+        for(int i=0; i<n;i++){
+            fast=fast.next; // creating gap between slow and fast of 'n' so that when fast will be at last node. slow will be automatically at the desired location
+        }
+
+        while(fast.next!=null)
+        {
+            slow=slow.next;
+            fast=fast.next;
+        }
+        slow.next = slow.next.next;
+
+    return dummy.next;
+    }
+}
