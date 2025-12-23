@@ -117,7 +117,7 @@ class Solution {
 
 
 
-// 141. Linked List Style
+// 141. Linked List Cycle
 // https://leetcode.com/problems/linked-list-cycle/
 
 public class Solution {
@@ -157,5 +157,48 @@ class Solution {
             }
         }
         return dummy.next;
+    }
+}
+
+
+
+// 143. Reorder List
+// https://leetcode.com/problems/reorder-list/description/
+
+class Solution {
+    public void reorderList(ListNode head) {
+        ListNode slow = head;
+        ListNode fast = head;
+        while (fast.next != null && fast.next.next != null) {
+            slow = slow.next;
+            fast = fast.next.next;
+        }
+        ListNode second = reverselist(slow.next); // splitting second half
+        slow.next = null; //splitting the list
+
+        ListNode first = head; //first node starts from head
+
+        while (second != null) {
+            ListNode temp1 = first.next; // saving values before breaking out there nodes
+            ListNode temp2 = second.next;
+
+            first.next = second; // connect first node with the second
+            second.next = temp1; // connecting second node with the first one
+
+            first = temp1;
+            second = temp2;
+        }
+
+    }
+
+    private ListNode reverselist(ListNode head) {
+        ListNode prev = null;
+        while (head != null) {
+            ListNode next = head.next;
+            head.next = prev;
+            prev = head;
+            head = next;
+        }
+        return prev;
     }
 }
