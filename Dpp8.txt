@@ -229,3 +229,42 @@ class Solution {
     return dummy.next;
     }
 }
+
+// 61. Rotate List
+// https://leetcode.com/problems/rotate-list/?envType=problem-list-v2&envId=linked-list
+
+class Solution {
+    public ListNode rotateRight(ListNode head, int k) {
+        ListNode left = head;
+        ListNode right = head;
+
+        int length = 0;
+        ListNode temp = head;
+        if (head == null || head.next == null || k == 0) {
+            return head;
+        }
+
+        while (temp != null) {
+            length++;
+            temp = temp.next; //counting length of list
+        }
+
+        k = k % length;
+        if (k == 0)
+            return head; //reducing the number of rotation if no of rotation is > length
+
+        for (int i = 0; i < k; i++) {
+            right = right.next;
+        }
+        while (right.next != null) // making left on thee node from where we have to split
+        {
+            left = left.next;
+            right = right.next;
+        }
+
+        ListNode new_node = left.next;
+        left.next = null;
+        right.next = head;
+        return new_node;
+    }
+}
