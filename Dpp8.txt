@@ -230,6 +230,8 @@ class Solution {
     }
 }
 
+
+
 // 61. Rotate List
 // https://leetcode.com/problems/rotate-list/?envType=problem-list-v2&envId=linked-list
 
@@ -266,5 +268,34 @@ class Solution {
         left.next = null;
         right.next = head;
         return new_node;
+    }
+}
+
+
+
+// 82. Remove Duplicates from Sorted List II
+// https://leetcode.com/problems/remove-duplicates-from-sorted-list-ii/?envType=problem-list-v2&envId=linked-list
+
+class Solution {
+    public ListNode deleteDuplicates(ListNode head) {
+        ListNode dummy = new ListNode(0);
+        dummy.next = head;
+        ListNode prev = dummy; //to keep track of the last node we added
+        ListNode curr = head;
+        while (curr != null) {
+            if (curr.next != null && curr.val == curr.next.val) //detecting if net is duplicate
+            {
+                int dupl = curr.val;
+                while (curr != null && curr.val == dupl) //checking for all duplicates
+                {
+                    curr = curr.next;
+                }
+                prev.next = curr; //removing duplicate
+            } else {
+                prev = curr;
+                curr = curr.next;
+            }
+        }
+        return dummy.next;
     }
 }
