@@ -299,3 +299,44 @@ class Solution {
         return dummy.next;
     }
 }
+
+
+
+// 2130. Maximum Twin Sum of a Linked List
+// https://leetcode.com/problems/maximum-twin-sum-of-a-linked-list/description/?envType=problem-list-v2&envId=linked-list
+
+class Solution {
+    public int pairSum(ListNode head) {
+
+        ListNode start = head;
+        ListNode end = head;
+        int max = 0;
+
+        // Finding middle of the list
+        while (end != null && end.next != null) {
+            start = start.next;
+            end = end.next.next;
+        }
+
+        // Reversing second half
+        ListNode prev = null;
+        while (start != null) {
+            ListNode next = start.next;
+            start.next = prev;
+            prev = start;
+            start = next;
+        }
+
+        // Comparing twin nodes
+        ListNode first = head;
+        ListNode second = prev;
+
+        while (second != null) {
+            max = Math.max(max, first.val + second.val);
+            first = first.next;
+            second = second.next;
+        }
+
+        return max;
+    }
+}
