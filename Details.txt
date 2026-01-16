@@ -143,3 +143,41 @@
 
 // 37. Sudoku Solver
 // https://leetcode.com/problems/sudoku-solver
+
+
+----------------------------------------------------------- Linked List -----------------------------------------------------------
+----------------------------------------------------------- Dpp8.txt -----------------------------------------------------------
+
+// 876. Middle of the Linked List
+// https://leetcode.com/problems/middle-of-the-linked-list/description/
+
+// 206. Reverse Linked List
+// https://leetcode.com/problems/reverse-linked-list/description/
+
+// 234. Palindrome Linked List
+// https://leetcode.com/problems/palindrome-linked-list/description/
+
+// 92. Reverse Linked List II
+// https://leetcode.com/problems/reverse-linked-list-ii/descri
+
+// 21. Merge two Sorted lists
+// https://leetcode.com/problems/merge-two-sorted-lists/description/
+
+// 141. Linked List Cycle
+// https://leetcode.com/problems/linked-list-cycle/
+
+// 203. Remove Linked List Elements
+// https://leetcode.com/problems/remove-linked-list-elements/
+
+// 143. Reorder List
+// https://leetcode.com/problems/reorder-list/description/
+
+// 19. Remove Nth Node From End of List
+// https://leetcode.com/problems/remove-nth-node-from-end-of-list/description/
+
+
+----------------------------------------------------------- Stacks and Queue -----------------------------------------------------------
+----------------------------------------------------------- Dpp9.txt -----------------------------------------------------------
+
+// 20. Valid Parentheses
+// https://leetcode.com/problems/valid-parentheses/description/
