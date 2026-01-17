@@ -187,4 +187,6 @@
 
 // 71. Simplify Path
 // https://leetcode.com/problems/simplify-path/description/?envType=problem-list-v2&envId=stack
-/
+
+// 155. Min Stack
+// https://leetcode.com/problems/min-stack/?envType=problem-list-v2&envId=stack
