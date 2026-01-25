@@ -175,7 +175,7 @@ class Solution {
 
 
 
-// 98. Validate Binary Search Tree 
+// 98. Validate Binary Search Tree
 // https://leetcode.com/problems/validate-binary-search-tree/description/
 
 class Solution {
@@ -183,7 +183,7 @@ class Solution {
         return check(root,Long.MIN_VALUE, Long.MAX_VALUE);
     }
 
-    private boolean check(TreeNode node, long min, long max) {
+    private boolean check(TreeNode node,long min,long max) {
         if (node == null)
             return true;
         if (node.val <= min || node.val >= max)
