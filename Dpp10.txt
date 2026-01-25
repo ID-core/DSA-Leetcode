@@ -1,0 +1,111 @@
+// 226. Invert Binary Tree
+// https://leetcode.com/problems/invert-binary-tree/
+
+class Solution {
+    public TreeNode invertTree(TreeNode root) {
+        if (root == null) //base case
+        {
+            return null;
+        }
+        TreeNode temp = root.left; //swapping left and right
+        root.left = root.right;
+        root.right = temp;
+
+        invertTree(root.left);
+        invertTree(root.right);
+        return root;
+    }
+}
+
+
+
+// 572. Subtree of Another Tree
+// https://leetcode.com/problems/subtree-of-another-tree/
+
+class Solution {
+    public boolean isSubtree(TreeNode root, TreeNode subRoot) {
+        if (root == null)
+            return false;
+        if (subRoot == null)
+            return true;
+        if (isSameTree(root, subRoot))
+            return true;
+
+        return isSubtree(root.left, subRoot) || isSubtree(root.right, subRoot);
+    }
+
+    public boolean isSameTree(TreeNode a, TreeNode b) {
+        if (a == null && b == null)
+            return true;
+        if (a == null || b == null)
+            return false;
+        if (a.val != b.val)
+            return false; //we are doing it like bcz if value fails we will directly return false, but if they matches we also have to check for left and right children, doing (a.val == b.val) return true; will return true even if node is same without checking for its children
+
+        return isSameTree(a.left, b.left) && isSameTree(a.right, b.right); //checking the children: if node val matches
+    }
+}
+
+
+
+// 211. Design Add and Search Words Data Structure
+// https://leetcode.com/problems/design-add-and-search-words-data-structure/
+
+class WordDictionary {
+    class TrieNode {
+        // 26 children for letters a–z
+        TrieNode[] children = new TrieNode[26];
+
+        // true if a word ends at this node
+        boolean isEnd = false;
+    }
+
+    // Root node of the Trie
+    private TrieNode root;
+
+    public WordDictionary() {
+        root = new TrieNode();
+    }
+
+    public void addWord(String word) {
+        TrieNode curr = root;
+        for (char ch : word.toCharArray()) {
+            int idx = ch - 'a';
+            if (curr.children[idx] == null) //if children does not exist ,create it
+            {
+                curr.children[idx] = new TrieNode();
+            }
+            curr = curr.children[idx]; // move to next node
+        }
+        curr.isEnd = true;
+    }
+
+    public boolean search(String word) {
+        return dfs(word, 0, root);
+    }
+
+    private boolean dfs(String word, int idx, TrieNode node) {
+        if (idx == word.length()) //return that word ends
+            return node.isEnd;
+
+        char ch = word.charAt(idx);
+
+        if (ch == '.') {
+            for (int i = 0; i < 26; i++) {
+                if (node.children[i] != null) // if node exists
+                {
+                    if (dfs(word, idx + 1, node.children[i]))
+                        return true; //match found
+                }
+            }
+            return false; //no match found
+        }
+        int index = ch - 'a'; //converting ch to index
+
+        if (node.children[index] == null)
+            return false; //no new node means word not exists
+
+        return dfs(word, idx + 1, node.children[index]);
+
+    }
+}
