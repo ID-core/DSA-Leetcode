@@ -288,3 +288,49 @@ class Trie {
         return true; //prefix exists
     }
 }
+
+
+
+// 297. Serialize and Deserialize Binary Tree
+// https://leetcode.com/problems/serialize-and-deserialize-binary-tree/description/
+
+public class Codec {
+    int index=0;
+
+    // Encodes a tree to a single string.
+    public String serialize(TreeNode root) {
+        StringBuilder sb = new StringBuilder();
+        buildString(root, sb);
+        return sb.toString();
+    }
+
+    private void buildString(TreeNode node, StringBuilder sb) {
+        if (node == null) {
+            sb.append("null,");
+            return;
+        }
+
+        sb.append(node.val).append(",");
+        buildString(node.left, sb);
+        buildString(node.right, sb);
+    }
+
+    // Decodes your encoded data to tree.
+    public TreeNode deserialize(String data) {
+        String[] dataset = data.split(",");
+        return buildTree(dataset);
+
+    }
+
+    private TreeNode buildTree(String[] datasets) {
+        if (datasets[index].equals("null")) {
+            index++;
+            return null;
+        }
+        TreeNode node = new TreeNode(Integer.parseInt(datasets[index]));
+        index++;
+        node.left = buildTree(datasets);
+        node.right = buildTree(datasets);
+        return node;
+    }
+}
