@@ -213,3 +213,23 @@ class Solution {
         inorder(root.right); // right
     }
 }
+
+
+
+// 235. Lowest Common Ancestor of a Binary Search Tree
+// https://leetcode.com/problems/lowest-common-ancestor-of-a-binary-search-tree/description/
+
+class Solution {
+    public TreeNode lowestCommonAncestor(TreeNode root, TreeNode p, TreeNode q) {
+        //In a BST, LCA is the first node where p and q go in different directions (or match the node)
+        while (root != null) {
+            if (p.val < root.val && q.val < root.val) {
+                root = root.left; // left subtree
+            } else if (p.val > root.val && q.val > root.val) {
+                root = root.right; // right subtree
+            } else
+                return root;
+        }
+        return null;
+    }
+}
