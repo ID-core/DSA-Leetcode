@@ -334,3 +334,32 @@ public class Codec {
         return node;
     }
 }
+
+
+
+// 124. Binary Tree Maximum Path Sum
+// https://leetcode.com/problems/binary-tree-maximum-path-sum/description/
+
+class Solution {
+    int globalMax = Integer.MIN_VALUE;
+
+    public int maxPathSum(TreeNode root) {
+        dfs(root);
+        return globalMax;
+    }
+
+    private int dfs(TreeNode root) {
+
+        if (root == null)
+            return 0;
+        int leftcontri = Math.max(0, dfs(root.left));
+        int rightcontri = Math.max(0, dfs(root.right));
+        int currentPath = leftcontri + rightcontri + root.val; //path passing throught this node
+        //if left and right contri are -ve, we are taking 0, but here we adding it - bcz -ve only decrease the value so take it as 0 and inspite of that we have have only root value also so 0+0-root value will give root value only
+        // Update global maximum
+        globalMax = Math.max(globalMax, currentPath);
+
+        // Return path that can be extended by parent
+        return root.val + Math.max(leftcontri, rightcontri);
+    }
+}
