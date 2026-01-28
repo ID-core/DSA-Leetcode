@@ -391,3 +391,29 @@ class Solution {
 
 
 
+// 139. Word Break
+// https://leetcode.com/problems/word-break/description/?envType=problem-list-v2&envId=trie
+
+class Solution {
+    public boolean wordBreak(String s, List<String> wordDict) {
+        // Convert list to set for fast lookup
+        Set<String> wordSet = new HashSet<>(wordDict);
+
+        // dp[i] = can s[0..i-1] be segmented? -There exists AT LEAST ONE WAY to split s[0..i-1] using dictionary words
+        boolean[] dp = new boolean[s.length() + 1];
+
+        dp[0] = true;
+
+        for (int i = 0; i <= s.length(); i++) //loop to go letter by letter in string
+        {
+            for (int j = 0; j < i; j++) // loop to split that only part of string which is formed from that outer loop
+            {
+                if (dp[j] && wordSet.contains(s.substring(j, i))) {
+                    dp[i] = true; //if the split is actual a word
+                    break;
+                }
+            }
+        }
+        return dp[s.length()];
+    }
+}
