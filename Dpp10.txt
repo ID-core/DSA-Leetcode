@@ -363,3 +363,31 @@ class Solution {
         return root.val + Math.max(leftcontri, rightcontri);
     }
 }
+
+
+
+// 386. Lexicographical Numbers
+// https://leetcode.com/problems/lexicographical-numbers/?envType=problem-list-v2&envId=trie
+
+class Solution {
+    public List<Integer> lexicalOrder(int n) {
+        List<Integer> result = new ArrayList<>();
+        int curr = 1;
+        for (int i = 0; i < n; i++) {
+            result.add(curr);
+            if (curr * 10 <= n) //checking for 1=> 10, 2=>20
+            {
+                curr = curr * 10;
+            } else {
+                while (curr % 10 == 9 || curr + 1 > n) {
+                    curr = curr / 10;
+                }
+                curr = curr + 1;
+            }
+        }
+        return result;
+    }
+}
+
+
+
