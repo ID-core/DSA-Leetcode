@@ -36,3 +36,68 @@ class Solution {
         return false;
     }
 }
+
+
+// 200. Number of islands
+// https://leetcode.com/problems/number-of-islands/
+
+// Multiply to go down rows, modulo to move inside a row
+// UP    → (x - 1, y)
+// DOWN  → (x + 1, y)
+// LEFT  → (x, y - 1)
+// RIGHT → (x, y + 1)
+
+class Solution {
+
+    int count = 0;
+
+    static void BFS(int i, int j, char[][] grid, int m, int n) {
+
+        Queue<Integer> queue = new LinkedList<>();
+        queue.add(i * n + j); //encoding i,j - making it in one line from 2d to 1d
+        grid[i][j] = '0'; //visited
+
+        while (!queue.isEmpty()) {
+            int id = queue.poll();
+            // decode back to (x, y)
+            int x = id / n;
+            int y = id % n;
+
+            // up
+            if (x - 1 >= 0 && grid[x - 1][y] == '1') {
+                grid[x-1][y] = 0;
+                queue.add((x - 1) * n + (y));
+            }
+            // down
+            if (x + 1 < m && grid[x + 1][y] == '1') {
+                grid[x+1][y] = 0;
+                queue.add((x + 1) * n + (y));
+            }
+            // right
+            if (y + 1 < n && grid[x][y + 1] == '1') {
+                grid[x][y+1] = 0;
+                queue.add((x) * n + (y + 1));
+            }
+            //left
+            if (y - 1 >= 0 && grid[x][y - 1] == '1') {
+                grid[x][y - 1] = '0';
+                queue.add((x) * n + (y - 1));
+            }
+        }
+
+    }
+
+    public int numIslands(char[][] grid) {
+        int m = grid.length;
+        int n = grid[0].length;
+        for (int i = 0; i < m; i++) {
+            for (int j = 0; j < n; j++) {
+                if (grid[i][j] == '1') {
+                    count++;
+                    BFS(i, j, grid, m, n);
+                }
+            }
+        }
+        return count;
+    }
+}
