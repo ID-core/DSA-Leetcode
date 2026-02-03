@@ -239,3 +239,32 @@ class Solution {
         return maxArea;
     }
 }
+
+
+
+// 797. All Paths From Source to Target
+// https://leetcode.com/problems/all-paths-from-source-to-target/description/
+
+class Solution {
+    List<List<Integer>> result = new ArrayList<>();
+
+    public List<List<Integer>> allPathsSourceTarget(int[][] graph) {
+        List<Integer> path = new ArrayList<>();
+        dfs(0, graph, path);
+        return result;
+    }
+
+    void dfs(int node, int[][] graph, List<Integer> path) {
+        path.add(node); // adding current node to path
+
+        if (node == graph.length - 1) {
+            result.add(new ArrayList<>(path));
+        } else {
+            for (int next : graph[node]) {
+                dfs(next, graph, path);
+            }
+        }
+        // backtracking
+        path.remove(path.size() - 1);
+    }
+}
