@@ -205,3 +205,37 @@ class Solution {
         return fresh == 0 ? minutes : -1;
     }
 }
+
+
+
+// 695. Max Area of island
+// https://leetcode.com/problems/max-area-of-island/
+
+class Solution {
+    int maxArea;
+
+    int dfs(int i, int j, int[][] grid) {
+        // boundary and water check
+        if (i < 0 || j < 0 || i >= grid.length || j >= grid[0].length || grid[i][j] == 0)
+            return 0;
+
+        grid[i][j] = 0; // marks visited
+        int area = 1; // as we are already inside one cell
+        area = area + dfs(i - 1, j, grid); // top
+        area = area + dfs(i + 1, j, grid); // bottom
+        area = area + dfs(i, j - 1, grid); // left
+        area = area + dfs(i, j + 1, grid); // right
+        return area;
+    }
+
+    public int maxAreaOfIsland(int[][] grid) {
+        for (int i = 0; i < grid.length; i++) {
+            for (int j = 0; j < grid[0].length; j++) {
+                if (grid[i][j] == 1) {
+                    maxArea = Math.max(maxArea, dfs(i, j, grid));
+                }
+            }
+        }
+        return maxArea;
+    }
+}
