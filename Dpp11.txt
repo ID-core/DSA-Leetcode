@@ -268,3 +268,34 @@ class Solution {
         path.remove(path.size() - 1);
     }
 }
+
+
+
+// 841. Keys and Rooms
+// https://leetcode.com/problems/keys-and-rooms/description/
+
+class Solution {
+    public boolean canVisitAllRooms(List<List<Integer>> rooms) {
+        int n = rooms.size();
+        Queue<Integer> queue = new LinkedList<>();
+        queue.add(0); // starting from room 0
+        boolean[] visited = new boolean[n];
+        visited[0] = true;
+
+        while (!queue.isEmpty()) {
+            int node = queue.poll();
+            for (int key : rooms.get(node)) { // Look at all keys inside this room.
+                if (!visited[key]) {
+                    visited[key] = true;
+                    queue.add(key);
+                }
+            }
+        }
+        for (boolean val : visited) {
+            if (!(val))
+                return false;
+        }
+        return true;
+
+    }
+}
