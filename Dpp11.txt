@@ -345,3 +345,46 @@ class Solution {
         return -1;
     }
 }
+
+
+// 207. Course Schedule
+// https://leetcode.com/problems/course-schedule/description/
+
+class Solution {
+    public boolean canFinish(int numCourses, int[][] prerequisites) {
+        List<List<Integer>> graph = new ArrayList<>();
+        //building graph
+        for (int i = 0; i < numCourses; i++) {
+            graph.add(new ArrayList<>());
+        }
+        boolean[] visited = new boolean[numCourses];
+        boolean[] graphstack = new boolean[numCourses];
+        for (int[] pre : prerequisites) {
+            int course = pre[0];
+            int prerequisite = pre[1];
+            graph.get(prerequisite).add(course);
+        }
+        for (int i = 0; i < numCourses; i++) {
+            if (!visited[i]) {
+                if (dfs(graph, graphstack, visited, i))
+                    return false;
+            }
+        }
+        return true;
+    }
+    
+    private boolean dfs(List<List<Integer>> graph, boolean[] graphstack, boolean[] visited, int node) {
+        if (visited[node])
+            return false; //already safe
+        if (graphstack[node])
+            return true; //cycle
+        graphstack[node] = true;
+        for (int neig : graph.get(node)) {
+            if (dfs(graph, graphstack, visited, neig))
+                return true;
+        }
+        graphstack[node] = false;
+        visited[node] = true;
+        return false;
+    }
+}
