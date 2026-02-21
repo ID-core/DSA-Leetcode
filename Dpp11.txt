@@ -347,6 +347,7 @@ class Solution {
 }
 
 
+
 // 207. Course Schedule
 // https://leetcode.com/problems/course-schedule/description/
 
@@ -385,6 +386,63 @@ class Solution {
         }
         graphstack[node] = false;
         visited[node] = true;
+        return false;
+    }
+}
+
+
+
+// 210. Course Schedule II
+// https://leetcode.com/problems/course-schedule-ii/description/
+
+import java.util.*;
+
+class Solution {
+    public int[] findOrder(int numCourses, int[][] prerequisites) {
+        List<List<Integer>> graph = new ArrayList<>();
+        for (int i = 0; i < numCourses; i++) {
+            graph.add(new ArrayList<>());
+        }
+
+        for (int[] pre : prerequisites) {
+            int course = pre[0];
+            int prerequisite = pre[1];
+            graph.get(prerequisite).add(course);
+        }
+        boolean[] visited = new boolean[numCourses];
+        boolean[] graphstack = new boolean[numCourses];
+        List<Integer> needed_stack = new ArrayList<>(numCourses);
+
+        for (int i = 0; i < numCourses; i++) {
+            if (!visited[i]) {
+                if (dfs(graph, visited, graphstack, needed_stack, i))
+                    return new int[0];
+            }
+        }
+        Collections.reverse(needed_stack);
+        int[] result = new int[numCourses];
+        for (int i = 0; i < numCourses; i++) {
+            result[i] = needed_stack.get(i);
+        }
+
+        return result;
+    }
+
+    private boolean dfs(List<List<Integer>> graph, boolean[] visited, boolean[] graphstack, List<Integer> needed_stack,
+            int node) {
+        if (visited[node])
+            return false;
+        if (graphstack[node])
+            return true;
+
+        graphstack[node] = true;
+        for (int neigh : graph.get(node)) {
+            if (dfs(graph, visited, graphstack, needed_stack, neigh))
+                return true;
+        }
+        visited[node] = true;
+        graphstack[node] = false;
+        needed_stack.add(node);
         return false;
     }
 }
