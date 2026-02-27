@@ -396,7 +396,6 @@ class Solution {
 // https://leetcode.com/problems/course-schedule-ii/description/
 
 import java.util.*;
-
 class Solution {
     public int[] findOrder(int numCourses, int[][] prerequisites) {
         List<List<Integer>> graph = new ArrayList<>();
@@ -443,6 +442,48 @@ class Solution {
         visited[node] = true;
         graphstack[node] = false;
         needed_stack.add(node);
+        return false;
+    }
+}
+
+
+
+// 684. Redundant Connection
+// https://leetcode.com/problems/redundant-connection/
+
+class Solution {
+    public int[] findRedundantConnection(int[][] edges) {
+        List<List<Integer>> graph = new ArrayList<>();
+        int n = edges.length;
+        // creating into graph(1-based)
+        for (int i = 0; i < n + 1; i++) { //as its 1 based
+            graph.add(new ArrayList<>());
+        }
+        for (int edge[] : edges) {
+            int u = edge[0];
+            int v = edge[1];
+            boolean[] visited = new boolean[n + 1]; //as its 1 based
+            if (dfs(graph, u, v, visited))
+                return edge;
+
+            graph.get(u).add(v);
+            graph.get(v).add(u);
+        }
+        return new int[0];
+
+    }
+
+    private boolean dfs(List<List<Integer>> graph, int u, int v, boolean[] visited) {
+        if (u == v)
+            return true;
+        visited[u] = true;
+        for (int neigh : graph.get(u)) {
+            if (!visited[neigh]) {
+                if (dfs(graph, neigh, v, visited)) {
+                    return true;
+                }
+            }
+        }
         return false;
     }
 }
