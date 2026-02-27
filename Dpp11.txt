@@ -487,3 +487,42 @@ class Solution {
         return false;
     }
 }
+
+
+
+// 785. Is Graph Bipartite?
+// https://leetcode.com/problems/is-graph-bipartite/
+
+class Solution {
+    public boolean isBipartite(int[][] graph) {
+        int n = graph.length;
+        int[] color = new int[n];
+
+        //initiate all colours as -1
+        for (int i = 0; i < n; i++) {
+            color[i] = -1;
+        }
+        for (int i = 0; i < n; i++) {
+            if (color[i] == -1) {
+                if (!dfs(graph, color, i, 0))
+                    return false;
+            }
+        }
+        return true;
+    }
+
+    private boolean dfs(int[][] graph, int[] color, int i, int currentcolor) {
+        color[i] = currentcolor;
+        for (int neigh : graph[i]) {
+            if (color[neigh] == -1) {
+                if (!dfs(graph, color, neigh, 1 - currentcolor)) {
+                    return false;
+                }
+            }
+            if (color[neigh] == currentcolor) {
+                return false;
+            }
+        }
+        return true;
+    }
+}
