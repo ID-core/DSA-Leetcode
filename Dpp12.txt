@@ -1,0 +1,61 @@
+// 743. Network Delay Time
+// https://leetcode.com/problems/network-delay-time/description/
+
+class Pair {
+    int node;
+    int weight;
+
+    Pair(int node, int weight) {
+        this.node = node;
+        this.weight = weight;
+    }
+}
+
+class Solution {
+    public int networkDelayTime(int[][] times, int n, int k) {
+        List<List<Pair>> graph = new ArrayList<>();
+        int dist[] = new int[n + 1]; //its 1-indexed
+        for (int i = 0; i < n + 1; i++) {
+            graph.add(new ArrayList<>());
+        }
+        for (int i = 1; i < n + 1; i++) //i=1 as nodes start from 1
+        {
+            dist[i] = Integer.MAX_VALUE;
+        }
+
+        PriorityQueue<Pair> pq = new PriorityQueue<>((a, b) -> a.weight - b.weight);
+        pq.add(new Pair(k, 0));
+        dist[k] = 0;
+        for (int[] edges : times) {
+            int u = edges[0];
+            int v = edges[1];
+            int w = edges[2];
+            graph.get(u).add(new Pair(v, w));
+        }
+        while (!pq.isEmpty()) {
+            Pair current = pq.poll();
+            int node = current.node;
+            for (Pair neigh : graph.get(node)) {
+                int nextNode = neigh.node;
+                int weight = neigh.weight;
+                if (dist[node] + weight < dist[nextNode]) {
+                    dist[nextNode] = dist[node] + weight;
+                    pq.add(new Pair(nextNode, dist[nextNode]));
+                }
+            }
+        }
+
+        int maxTime = 0;
+        for (int i = 1; i < n + 1; i++) {
+            if (dist[i] == Integer.MAX_VALUE)
+                return -1;
+            else
+                maxTime = Math.max(maxTime, dist[i]);
+        }
+        return maxTime;
+    }
+}
+
+
+
+// 
