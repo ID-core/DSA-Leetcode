@@ -217,3 +217,75 @@ class Solution {
         return ans;
     }
 }
+
+// 52. N-Queens II
+// https://leetcode.com/problems/n-queens-ii/description/
+
+
+import java.util.*;
+class Solution {
+    int count = 0;
+
+    public int save(char[][] board, List<List<String>> all_board) {
+        List<String> new_board = new ArrayList<>();
+        for (int i = 0; i < board.length; i++) {
+            new_board.add(new String(board[i]));
+        }
+        count++;
+        return count;
+    }
+
+    public boolean isSafe(int row, int col, char[][] board) {
+
+        // column check
+        for (int i = 0; i < row; i++) {
+            if (board[i][col] == 'Q')
+                return false;
+        }
+
+        // upper-left diagonal
+        for (int r = row - 1, c = col - 1; r >= 0 && c >= 0; r--, c--) {
+            if (board[r][c] == 'Q')
+                return false;
+        }
+
+        // upper-right diagonal
+        for (int r = row - 1, c = col + 1; r >= 0 && c < board.length; r--, c++) {
+            if (board[r][c] == 'Q')
+                return false;
+        }
+
+        return true;
+    }
+
+    public void solve(int row, char[][] board) {
+
+        if (row == board.length) {
+            count++;
+            return;
+        }
+
+        for (int col = 0; col < board.length; col++) {
+
+            if (isSafe(row, col, board)) {
+                board[row][col] = 'Q';
+
+                solve(row + 1, board);
+
+                board[row][col] = '.'; // backtrack
+            }
+        }
+    }
+
+    public int totalNQueens(int n) {
+        List<List<String>> all_board = new ArrayList<>();
+        count = 0;
+        char[][] board = new char[n][n];
+        for (int i = 0; i < n; i++) {
+            Arrays.fill(board[i], '.');
+        }
+
+        solve(0, board);
+        return count;
+    }
+}
