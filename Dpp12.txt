@@ -197,3 +197,62 @@ class Solution {
         return -1;
     }
 }
+
+
+// 778. Swim in Rising Water
+// https://leetcode.com/problems/swim-in-rising-water/description/
+
+class Solution {
+    class Tuple {
+        int row;
+        int col;
+        int time;
+
+        Tuple(int row, int col, int time) {
+            this.row = row;
+            this.col = col;
+            this.time = time;
+        }
+    }
+
+    public int swimInWater(int[][] grid) {
+        int rows = grid.length;
+        int cols = grid[0].length;
+        int[][] dist = new int[rows][cols];
+        for (int i = 0; i < rows; i++) {
+            Arrays.fill(dist[i], Integer.MAX_VALUE);
+        }
+
+        PriorityQueue<Tuple> pq = new PriorityQueue<>((a, b) -> a.time - b.time);
+
+        int[][] dirs = { { 1, 0 }, { -1, 0 }, { 0, 1 }, { 0, -1 } };
+        pq.add(new Tuple(0, 0, grid[0][0]));
+        dist[0][0] = grid[0][0];
+
+        while (!pq.isEmpty()) {
+            Tuple current = pq.poll();
+            int r = current.row;
+            int c = current.col;
+            int time = current.time;
+
+            if (r == rows - 1 && c == cols - 1)
+                return time;
+            for (int[] dir : dirs) {
+                int nr = r + dir[0];
+                int nc = c + dir[1];
+
+                if (nr < 0 || nc < 0 || nr >= rows || nc >= cols)
+                    continue;
+                if (time > dist[r][c])
+                    continue; //if reached cell earlier with a better time, skip this worse path
+                int newTime = Math.max(time, grid[nr][nc]);
+                if (newTime < dist[nr][nc]) // if found a better choice(smaller time) than only update
+                {
+                    dist[nr][nc] = newTime;
+                    pq.add(new Tuple(nr, nc, newTime));
+                }
+            }
+        }
+        return -1;
+    }
+}
