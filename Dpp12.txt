@@ -128,3 +128,72 @@ class Solution {
         return -1;
     }
 }
+
+
+// 1631. Path with Minimum Effort
+// https://leetcode.com/problems/path-with-minimum-effort/description/
+
+class Solution {
+    class Tuple {
+        int row, col, effort;
+
+        Tuple(int row, int col, int effort) {
+            this.row = row;
+            this.col = col;
+            this.effort = effort;
+        }
+    }
+
+    public int minimumEffortPath(int[][] heights) {
+
+        int rows = heights.length;
+        int cols = heights[0].length;
+
+        int[][] dist = new int[rows][cols];
+        for (int i = 0; i < rows; i++) {
+            Arrays.fill(dist[i], Integer.MAX_VALUE);
+        }
+
+        PriorityQueue<Tuple> pq = new PriorityQueue<>(
+            (a, b) -> a.effort - b.effort
+        );
+
+        pq.add(new Tuple(0, 0, 0));
+        dist[0][0] = 0;
+
+        int[][] dirs = {{1,0}, {-1,0}, {0,1}, {0,-1}};
+
+        while (!pq.isEmpty()) {
+
+            Tuple current = pq.poll();
+
+            int r = current.row;
+            int c = current.col;
+            int effort = current.effort;
+
+            if (effort > dist[r][c]) continue;
+
+            if (r == rows - 1 && c == cols - 1)
+                return effort;
+
+            for (int[] dir : dirs) {
+
+                int nr = r + dir[0];
+                int nc = c + dir[1];
+
+                if (nr < 0 || nc < 0 || nr >= rows || nc >= cols)
+                    continue;
+
+                int diff = Math.abs(heights[r][c] - heights[nr][nc]);
+                int newEffort = Math.max(diff, effort);
+
+                if (newEffort < dist[nr][nc]) {
+                    dist[nr][nc] = newEffort;
+                    pq.add(new Tuple(nr, nc, newEffort));
+                }
+            }
+        }
+
+        return -1;
+    }
+}
