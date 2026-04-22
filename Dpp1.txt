@@ -234,4 +234,60 @@ class Solution {
 
 
 
-//
+// 217. Contains Duplicate
+// https://leetcode.com/problems/contains-duplicate/description/
+
+import java.util.*;
+class Solution {
+    public boolean containsDuplicate(int[] nums) {
+        int n=nums.length;
+        Arrays.sort(nums);
+        for(int i=0;i<n-1;i++)
+        {
+            if(nums[i]==nums[i+1])
+            return true;
+            
+        }
+        return false;
+    }
+}
+
+
+
+// 33. Search in Rotated Sorted Array
+// https://leetcode.com/problems/search-in-rotated-sorted-array/
+
+class Solution {
+    public int search(int[] nums, int target) {
+       for(int i=0; i <nums.length; i++)
+       {
+        if (nums[i]== target)
+        {
+            return i;
+        }
+       }
+       return -1;
+    }
+}
+
+
+
+// 53. Maximum Subarray
+// https://leetcode.com/problems/maximum-subarray/
+
+class Solution {
+    public int maxSubArray(int[] nums) {
+        int max = nums[0];
+        int sum = 0;
+        for (int i = 0; i < nums.length; i++) {
+            sum += nums[i];
+            if (sum > max) {
+                max = sum;
+            }
+            if (sum < 0) {
+                sum = 0;
+            }
+        }
+        return max;
+    }
+}
