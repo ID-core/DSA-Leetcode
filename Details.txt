@@ -364,5 +364,7 @@
 // 647. Palindromic substrings
 // https://leetcode.com/problems/palindromic-substrings/
 
+----------------2D Arrays:
+
 // 48. Rotate Image
 // https://leetcode.com/problems/rotate-image/description/
