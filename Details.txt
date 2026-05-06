@@ -358,8 +358,11 @@
 // 3. Longest substring without repeating characters
 // https://leetcode.com/problems/longest-substring-without-repeating-characters/
 
-// 424. Longest Repeating character replacement
+// 424. Longest Repeating Character Replacement
 // https://leetcode.com/problems/longest-repeating-character-replacement/
 
 // 647. Palindromic substrings
 // https://leetcode.com/problems/palindromic-substrings/
+
+// 48. Rotate Image
+// https://leetcode.com/problems/rotate-image/description/
