@@ -368,3 +368,6 @@
 
 // 48. Rotate Image
 // https://leetcode.com/problems/rotate-image/description/
+
+// 79. Word Search
+// https://leetcode.com/problems/word-search/description/
