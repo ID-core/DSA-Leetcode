@@ -96,6 +96,9 @@
 // 3211. Generate Binary Strings Without Adjacent Zeros
 // https://leetcode.com/problems/generate-binary-strings-without-adjacent-zeros/description/
 
+// Check if reversing a sub array make the array sorted
+// https://www.geeksforgeeks.org/check-reversing-sub-array-make-array-sorted/
+
 
 ----------------------------------------------------------- Strings -----------------------------------------------------------
 ----------------------------------------------------------- Dpp5.txt -----------------------------------------------------------
