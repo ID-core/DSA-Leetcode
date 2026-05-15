@@ -71,6 +71,9 @@
 // 682. Basketball Game
 // https://leetcode.com/problems/baseball-game/description/?envType=problem-list-v2&envId=array
 
+// Check if reversing a sub-array makes the array sorted
+// https://www.geeksforgeeks.org/check-reversing-sub-array-make-array-sorted/
+
 
 ----------------------------------------------------------- Bit Manipulation -----------------------------------------------------------
 ----------------------------------------------------------- Dpp4.txt -----------------------------------------------------------
@@ -95,9 +98,6 @@
 
 // 3211. Generate Binary Strings Without Adjacent Zeros
 // https://leetcode.com/problems/generate-binary-strings-without-adjacent-zeros/description/
-
-// Check if reversing a sub array make the array sorted
-// https://www.geeksforgeeks.org/check-reversing-sub-array-make-array-sorted/
 
 
 ----------------------------------------------------------- Strings -----------------------------------------------------------
