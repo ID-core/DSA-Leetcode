@@ -1,0 +1,90 @@
+// Q1. Ugly Number
+// https://leetcode.com/problems/ugly-number/?envType=problem-list-v2&envId=maths-m2-divisibility-modular-arithmetic
+
+
+class Solution {
+    public boolean isUgly(int n) {
+        if (n <= 0) {
+            return false; // Ugly numbers are positive integers
+        }
+        if (n == 1) {
+            return true; // 1 is considered an ugly number
+        }
+        // Divide by 2 as long as possible
+        while (n % 2 == 0) {
+            n /= 2;
+        }
+        // Divide by 3 as long as possible
+        while (n % 3 == 0) {
+            n /= 3;
+        }
+        // Divide by 5 as long as possible
+        while (n % 5 == 0) {
+            n /= 5;
+        }
+        // If n becomes 1, it means all prime factors were 2, 3, or 5
+        return n == 1;
+    }
+}
+
+
+
+// Q2. Self Dividing Number
+// https://leetcode.com/problems/self-dividing-numbers/?envType=problem-list-v2&envId=maths-m2-divisibility-modular-arithmetic
+
+
+class Solution {
+    public List<Integer> selfDividingNumbers(int left, int right) {
+        List<Integer> ans = new ArrayList<>();
+        for (int i = left; i <= right; i++) {
+            if (isSelfDividing(i)) {
+                ans.add(i);
+            }
+        }
+        return ans;
+    }
+
+    boolean isSelfDividing(int num) {
+        int n = num;
+        while (n > 0) {
+            int digit = n % 10;
+            // digit cannot be 0 and num must be divisible by digit
+            if (digit == 0 || num % digit != 0) {
+                return false;
+            }
+            n /= 10;
+        }
+        return true;
+    }
+}
+
+
+
+// Q3. Self Divding Number
+// https://leetcode.com/problems/self-dividing-numbers/?envType=problem-list-v2&envId=maths-m2-divisibility-modular-arithmetic
+
+
+class Solution {
+    public List<Integer> selfDividingNumbers(int left, int right) {
+        List<Integer> ans = new ArrayList<>();
+        for (int i = left; i <= right; i++) {
+            if (isSelfDividing(i)) {
+                ans.add(i);
+            }
+        }
+        return ans;
+    }
+
+    boolean isSelfDividing(int num) {
+        int n = num;
+        while (n > 0) {
+            int digit = n % 10;
+            // digit cannot be 0 and num must be divisible by digit
+            if (digit == 0 || num % digit != 0) {
+                return false;
+            }
+            n /= 10;
+        }
+        return true;
+    }
+}
