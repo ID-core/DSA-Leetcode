@@ -332,3 +332,54 @@ class Solution {
         return right-left+1;
     }
 }
+
+
+// 141. Linked List Cycle
+// https://leetcode.com/problems/linked-list-cycle/description/
+
+public class Solution {
+    public boolean hasCycle(ListNode head) {
+        ListNode slow=head;
+        ListNode fast=head;
+        if(head==null || head.next==null) return false;
+
+        while(fast!=null && fast.next!=null)
+        {
+            slow=slow.next;
+            fast=fast.next.next;
+            if(slow==fast) return true;
+        }
+        return false;
+    }
+}
+
+
+// 142. Linked List Cycle II
+// https://leetcode.com/problems/linked-list-cycle-ii/description/
+
+public class Solution {
+    public ListNode detectCycle(ListNode head) {
+        if(head==null || head.next==null) return null;
+        ListNode slow=head;
+        ListNode fast=head;
+        while(fast.next!=null && fast.next.next!=null)
+        {
+            slow=slow.next;
+            fast=fast.next.next;
+            if(slow == fast)
+            {
+                ListNode ans=head;
+                while(ans!=slow)
+                {
+                    ans=ans.next;
+                    slow=slow.next;
+                }
+                return ans;
+            }
+        }
+    return null;
+    }
+}
+
+
+//
