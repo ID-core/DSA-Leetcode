@@ -461,4 +461,113 @@ class Solution {
 }
 
 
-// 
+// Maximum Sum Subarray of Size K
+// https://www.geeksforgeeks.org/problems/max-sum-subarray-of-size-k5313/1
+
+class Solution {
+	public int maxSubarraySum(int[] arr, int k) {
+		// Code here
+		int n = arr.length;
+		int sum = 0;
+		for (int i = 0; i<k; i++)
+			{
+			sum += arr[i];
+		}
+		int nextsum = sum;
+		for (int i = k; i<n; i++)
+			{
+			sum = sum + arr[i] - arr[i - k];
+			nextsum = Math.max(sum, nextsum);
+		}
+		return nextsum;
+	}
+}
+
+
+// 209. Minimum size subarray Sum
+// https://leetcode.com/problems/minimum-size-subarray-sum/
+
+class Solution {
+    public int minSubArrayLen(int target, int[] nums) {
+        int n = nums.length - 1;
+        int left = 0;
+        int sum = 0;
+        int ans = Integer.MAX_VALUE;
+        for (int right = 0; right <= n; right++) {
+            sum = sum + nums[right];
+            while (sum >= target) {
+                ans = Math.min(ans, right - left + 1);
+                sum = sum - nums[left];
+                left++;
+            }
+        }
+        return ans == Integer.MAX_VALUE ? 0 : ans;
+    }
+}
+
+
+// Longest Substring with K uniques
+// https://www.geeksforgeeks.org/problems/longest-k-unique-characters-substring0853/1
+
+class Solution {
+	public int longestKSubstr(String s, int k) {
+		int left = 0;
+		int ans = -1;
+		HashMap<Character, Integer>map = new HashMap<>();
+		for (int i = 0; i<s.length(); i++)
+			{
+			char ch = s.charAt(i);
+			map.put(ch, map.getOrDefault(ch, 0) + 1);
+			
+			// shrinking window
+			
+			while (map.size()>k)
+				{
+				char leftchar = s.charAt(left);
+				map.put(leftchar, map.get(leftchar) - 1);
+				if (map.get(leftchar) == 0)
+					{
+					map.remove(leftchar);
+				}
+				left++;
+			}
+			
+			// updating
+			if (map.size() == k)
+				{
+				ans = Math.max(ans, i - left + 1);
+			}
+		}
+		return ans;
+	}
+}
+
+
+// 904. Fruits into Baskets
+// https://leetcode.com/problems/fruit-into-baskets/
+
+class Solution {
+    public int totalFruit(int[] fruits) {
+        int left = 0;
+        int ans = 0;
+        if (fruits.length == 1)
+            return 1;
+        HashMap<Integer, Integer> map = new HashMap<>();
+        for (int right = 0; right < fruits.length; right++) {
+            int ch = fruits[right];
+            map.put(ch, map.getOrDefault(ch, 0) + 1);
+
+            //shrinking
+            while (map.size() > 2) {
+                int leftchar = fruits[left];
+                map.put(leftchar, map.get(leftchar) - 1);
+                if (map.get(leftchar) == 0) {
+                    map.remove(leftchar);
+                }
+                left++;
+            }
+            ans = Math.max(ans, right - left + 1);
+        }
+        return ans;
+    }
+}
