@@ -773,3 +773,91 @@ class Solution {
         return ans;
     }
 }
+
+
+// 53. Maximum Subarray
+// https://leetcode.com/problems/maximum-subarray/description
+
+class Solution {
+    public int maxSubArray(int[] nums) {
+        int n = nums.length;
+        int sum = 0;
+        int max = nums[0];
+        for (int i = 0; i < n; i++) {
+            sum = sum + nums[i];
+            if (sum > max) {
+                max = sum;
+            }
+            if (sum < 0) {
+                sum = 0;
+            }
+        }
+        return max;
+    }
+}
+
+
+// Minium Subarray
+// https://www.geeksforgeeks.org/problems/smallest-sum-contiguous-subarray/1
+
+class Solution {
+	static int smallestSumSubarray(int a[], int size) {
+		// your code here
+		int min = a[0];
+		int sum = 0;
+		for (int i = 0; i<size; i++)
+			{
+			sum = sum + a[i];
+			if (sum<min)
+				min = sum;
+			if (sum>0)
+				sum = 0;
+		}
+		return min;
+		
+	}
+}
+
+
+// 152. Maximum Product Subarray
+// https://leetcode.com/problems/maximum-product-subarray/description
+
+class Solution {
+    public int maxProduct(int[] nums) {
+        int maxproduct = nums[0];
+        int n = nums.length;
+        int currentproduct = 1;
+        for (int i = 0; i < n; i++) {
+            currentproduct *= nums[i];
+            maxproduct = Math.max(currentproduct, maxproduct);
+            if (currentproduct == 0)
+                currentproduct = 1;
+        }
+        currentproduct = 1;
+        for (int j = n - 1; j >= 0; j--) {
+            currentproduct *= nums[j];
+            maxproduct = Math.max(currentproduct, maxproduct);
+            if (currentproduct == 0)
+                currentproduct = 1;
+        }
+        return maxproduct;
+    }
+}
+
+
+// 1186. Maximum Subarray Sum with One Deletion
+// https://leetcode.com/problems/maximum-subarray-sum-with-one-deletion/description/
+
+class Solution {
+    public int maximumSum(int[] arr) {
+        int keep = arr[0];
+        int delete = 0;
+        int ans = arr[0];
+        for (int i = 1; i < arr.length; i++) {
+            delete = Math.max(keep, delete + arr[i]); // delete current element or already deleted so continue
+            keep = Math.max(keep + arr[i], arr[i]); //keep previous best or new subarray start
+            ans = Math.max(ans, Math.max(delete, keep));
+        }
+        return ans;
+    }
+}
