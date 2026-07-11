@@ -665,3 +665,111 @@ class Solution {
         return min_len == Integer.MAX_VALUE ? 0 : min_len;
     }
 }
+
+
+// 76. Minimum Window Substring
+// https://leetcode.com/problems/minimum-window-substring/description/?envType=study-plan-v2&envId=top-interview-150
+
+
+class Solution {
+    public String minWindow(String s, String t) {
+        HashMap<Character, Integer> s_map = new HashMap<>();
+        HashMap<Character, Integer> t_map = new HashMap<>();
+        int start = 0;
+        int left = 0;
+        int min_len = Integer.MAX_VALUE;
+        int formed_len = 0;
+        for (int i = 0; i < t.length(); i++) {
+            char ch = t.charAt(i);
+            t_map.put(ch, t_map.getOrDefault(ch, 0) + 1);
+        }
+        int req_len = t_map.size();
+        for (int right = 0; right < s.length(); right++) {
+            char ch = s.charAt(right);
+            s_map.put(ch, s_map.getOrDefault(ch, 0) + 1);
+
+            if (t_map.containsKey(ch) && t_map.get(ch).equals(s_map.get(ch))) {
+                formed_len++;
+            }
+            while (req_len == formed_len) {
+                //updating ans
+                if (right - left + 1 < min_len) {
+                    min_len = right - left + 1;
+                    start = left;
+                }
+                char leftchar = s.charAt(left);
+                s_map.put(leftchar, s_map.get(leftchar) - 1); //removing left char - shrinking
+
+                // if windows satisfying/not satisfying condition after removing left
+                if (t_map.containsKey(leftchar) && s_map.get(leftchar) < t_map.get(leftchar)) {
+                    formed_len--;
+                }
+                left++;
+            }
+        }
+        return min_len == Integer.MAX_VALUE ? "" : s.substring(start, start + min_len);
+    }
+}
+
+
+// 567. Permutation in a String
+// https://leetcode.com/problems/permutation-in-string/
+
+class Solution {
+    public boolean checkInclusion(String s1, String s2) {
+        int req[] = new int[26];
+        int window[] = new int[26];
+        for (int i = 0; i < s1.length(); i++) {
+            req[s1.charAt(i) - 'a']++;
+        }
+        int left = 0;
+        int right;
+        for (right = 0; right < s2.length(); right++) {
+            window[s2.charAt(right) - 'a']++;
+
+            // if our window becomes> s1.length
+            while (right - left + 1 > s1.length()) {
+                window[s2.charAt(left) - 'a']--;
+                left++;
+            }
+
+            //if length matches, then frequencies matched check
+            if (right - left + 1 == s1.length()) {
+                if (Arrays.equals(req, window)) {
+                    return true;
+                }
+            }
+
+        }
+        return false;
+    }
+}
+
+
+// 438. Find all anagrams in a String
+// https://leetcode.com/problems/find-all-anagrams-in-a-string/
+
+class Solution {
+    public List<Integer> findAnagrams(String s, String p) {
+        List<Integer> ans = new ArrayList<>();
+
+        int req[] = new int[26];
+        int window[] = new int[26];
+
+        for (int i = 0; i < p.length(); i++) {
+            req[p.charAt(i) - 'a']++;
+        }
+        int left = 0;
+        for (int right = 0; right < s.length(); right++) {
+            window[s.charAt(right) - 'a']++;
+            while (right - left + 1 > p.length()) {
+                window[s.charAt(left) - 'a']--;
+                left++;
+            }
+            if (Arrays.equals(window, req)) {
+                ans.add(left);
+            }
+        }
+        return ans;
+    }
+}
