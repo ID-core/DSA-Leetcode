@@ -147,3 +147,107 @@ class Solution {
         return closest;
     }
 }
+
+
+
+// 713. SubArray product less than k
+// https://leetcode.com/problems/subarray-product-less-than-k/description/
+
+class Solution {
+    public int numSubarrayProductLessThanK(int[] nums, int k) {
+        if (k <= 1)
+            return 0;
+        int count = 0;
+        int left = 0;
+        int product = 1;
+        for (int right = 0; right < nums.length; right++) {
+            product = product * nums[right];
+            while (product >= k) {
+                product = product / nums[left];
+                left++;
+            }
+            count = count + (right - left + 1);
+        }
+        return count;
+    }
+}
+
+
+// 75. Sort Colors
+// https://leetcode.com/problems/sort-colors/description/
+
+class Solution {
+    public void sortColors(int[] nums) {
+        int left=0;
+        int right=nums.length-1;
+        for(int i=0;i<=right;)
+        {
+            if(nums[i]==0)
+            {
+                swap(nums,i,left);
+                left++;
+                i++;
+            }
+            else if(nums[i]==2)
+            {
+                swap(nums,i,right);
+                right--;
+            }
+            else
+            {
+                i++;
+            }
+        }
+    }
+    public static void swap(int nums[], int x, int y)
+    {
+        int temp;
+        temp=nums[x];
+        nums[x]=nums[y];
+        nums[y]=temp;
+    }
+}
+
+
+
+// 18. 4sum
+// https://leetcode.com/problems/4sum/description/
+
+class Solution {
+    public List<List<Integer>> fourSum(int[] nums, int target) {
+        int n = nums.length;
+        Arrays.sort(nums);
+        List<List<Integer>> result = new ArrayList<>();
+        long sum;
+        for (int i = 0; i < n - 3; i++) {
+            if (i > 0 && nums[i] == nums[i - 1])
+                continue;
+
+            for (int j = i + 1; j < n - 2; j++) {
+                if (j > i + 1 && nums[j] == nums[j - 1])
+                    continue;
+
+                int left = j + 1;
+                int right = nums.length - 1;
+                while (left < right) {
+                    sum = (long) nums[i] + nums[j] + nums[left] + nums[right];
+                    if (sum == target) {
+                        result.add(Arrays.asList(nums[i], nums[j], nums[left], nums[right]));
+                        left++;
+                        right--;
+
+                        while (left < right && nums[left] == nums[left - 1])
+                            left++;
+                        while (left < right && nums[right] == nums[right - 1])
+                            right--;
+                    } else if (sum < target) {
+                        left++;
+                    } else {
+                        right--;
+                    }
+                }
+            }
+        }
+        return result;
+    }
+}
