@@ -865,3 +865,87 @@ class Solution {
 
 // 1749. Maximum Absolute Sum of Any Subarray
 // https://leetcode.com/problems/maximum-absolute-sum-of-any-subarray/description/
+
+class Solution {
+    public int maxAbsoluteSum(int[] nums) {
+        // since for absolute value , ans could be max + number or most -ve number
+        int maxSum = 0;
+        int minSum = 0;
+        int max_right = 0;
+        int min_right = 0;
+        for (int i = 0; i < nums.length; i++) {
+            int opt1 = nums[i];
+            int opt2 = nums[i] + max_right;
+            max_right = opt1 > opt2 ? opt1 : opt2;
+            if (max_right > maxSum) {
+                maxSum = max_right;
+            }
+
+            opt1 = nums[i];
+            opt2 = nums[i] + min_right;
+            min_right = opt1 < opt2 ? opt1 : opt2;
+            if (min_right < minSum) {
+                minSum = min_right;
+            }
+        }
+        return maxSum > Math.abs(minSum) ? maxSum : Math.abs(minSum);
+    }
+}
+
+
+// 918. Maximum Sum Circular Subarray
+// https://leetcode.com/problems/maximum-sum-circular-subarray/description
+
+class Solution {
+    public int maxSubarraySumCircular(int[] nums) {
+        int max_right = 0;
+        int maxSum = Integer.MIN_VALUE;
+
+        int min_right = 0;
+        int minSum = Integer.MAX_VALUE;
+        int total = 0;
+        for (int i = 0; i < nums.length; i++) {
+            total += nums[i];
+            int opt1 = nums[i];
+            int opt2 = nums[i] + max_right;
+            max_right = opt1 > opt2 ? opt1 : opt2;
+            if (max_right > maxSum) {
+                maxSum = max_right;
+            }
+
+            opt1 = nums[i];
+            opt2 = nums[i] + min_right;
+            min_right = opt1 < opt2 ? opt1 : opt2;
+            if (min_right < minSum) {
+                minSum = min_right;
+            }
+        }
+        if (maxSum < 0)
+            return maxSum;
+
+        int circularSum = 0;
+        circularSum = total - minSum;
+        return maxSum > circularSum ? maxSum : circularSum;
+    }
+}
+
+
+// 121. Best time to buy and sell stock
+// https://leetcode.com/problems/best-time-to-buy-and-sell-stock/
+
+class Solution {
+    public int maxProfit(int[] prices) {
+        int min_value = prices[0];
+        int maxProfit = 0;
+        for (int i = 0; i < prices.length; i++) {
+            if (prices[i] < min_value) {
+                min_value = prices[i];
+            }
+            int profit = prices[i] - min_value;
+            if (profit > maxProfit) {
+                maxProfit = profit;
+            }
+        }
+        return maxProfit;
+    }
+}
