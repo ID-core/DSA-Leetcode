@@ -40,6 +40,7 @@ class Solution {
 | [0152-maximum-product-subarray](https://github.com/ID-core/DSA-Leetcode/tree/master/0152-maximum-product-subarray) |
 | [0167-two-sum-ii-input-array-is-sorted](https://github.com/ID-core/DSA-Leetcode/tree/master/0167-two-sum-ii-input-array-is-sorted) |
 | [0209-minimum-size-subarray-sum](https://github.com/ID-core/DSA-Leetcode/tree/master/0209-minimum-size-subarray-sum) |
+| [0560-subarray-sum-equals-k](https://github.com/ID-core/DSA-Leetcode/tree/master/0560-subarray-sum-equals-k) |
 | [0581-shortest-unsorted-continuous-subarray](https://github.com/ID-core/DSA-Leetcode/tree/master/0581-shortest-unsorted-continuous-subarray) |
 | [0713-subarray-product-less-than-k](https://github.com/ID-core/DSA-Leetcode/tree/master/0713-subarray-product-less-than-k) |
 | [0904-fruit-into-baskets](https://github.com/ID-core/DSA-Leetcode/tree/master/0904-fruit-into-baskets) |
@@ -91,6 +92,7 @@ class Solution {
 | [0202-happy-number](https://github.com/ID-core/DSA-Leetcode/tree/master/0202-happy-number) |
 | [0424-longest-repeating-character-replacement](https://github.com/ID-core/DSA-Leetcode/tree/master/0424-longest-repeating-character-replacement) |
 | [0438-find-all-anagrams-in-a-string](https://github.com/ID-core/DSA-Leetcode/tree/master/0438-find-all-anagrams-in-a-string) |
+| [0560-subarray-sum-equals-k](https://github.com/ID-core/DSA-Leetcode/tree/master/0560-subarray-sum-equals-k) |
 | [0567-permutation-in-string](https://github.com/ID-core/DSA-Leetcode/tree/master/0567-permutation-in-string) |
 | [0904-fruit-into-baskets](https://github.com/ID-core/DSA-Leetcode/tree/master/0904-fruit-into-baskets) |
 ## Sliding Window
@@ -108,6 +110,7 @@ class Solution {
 |  |
 | ------- |
 | [0209-minimum-size-subarray-sum](https://github.com/ID-core/DSA-Leetcode/tree/master/0209-minimum-size-subarray-sum) |
+| [0560-subarray-sum-equals-k](https://github.com/ID-core/DSA-Leetcode/tree/master/0560-subarray-sum-equals-k) |
 | [0713-subarray-product-less-than-k](https://github.com/ID-core/DSA-Leetcode/tree/master/0713-subarray-product-less-than-k) |
 ## String
 |  |
