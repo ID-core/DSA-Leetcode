@@ -49,6 +49,7 @@ class Solution {
 | [0202-happy-number](https://github.com/ID-core/DSA-Leetcode/tree/master/0202-happy-number) |
 | [0234-palindrome-linked-list](https://github.com/ID-core/DSA-Leetcode/tree/master/0234-palindrome-linked-list) |
 | [0581-shortest-unsorted-continuous-subarray](https://github.com/ID-core/DSA-Leetcode/tree/master/0581-shortest-unsorted-continuous-subarray) |
+| [0844-backspace-string-compare](https://github.com/ID-core/DSA-Leetcode/tree/master/0844-backspace-string-compare) |
 | [0876-middle-of-the-linked-list](https://github.com/ID-core/DSA-Leetcode/tree/master/0876-middle-of-the-linked-list) |
 ## Binary Search
 |  |
@@ -93,12 +94,14 @@ class Solution {
 | ------- |
 | [0003-longest-substring-without-repeating-characters](https://github.com/ID-core/DSA-Leetcode/tree/master/0003-longest-substring-without-repeating-characters) |
 | [0424-longest-repeating-character-replacement](https://github.com/ID-core/DSA-Leetcode/tree/master/0424-longest-repeating-character-replacement) |
+| [0844-backspace-string-compare](https://github.com/ID-core/DSA-Leetcode/tree/master/0844-backspace-string-compare) |
 ## Stack
 |  |
 | ------- |
 | [0143-reorder-list](https://github.com/ID-core/DSA-Leetcode/tree/master/0143-reorder-list) |
 | [0234-palindrome-linked-list](https://github.com/ID-core/DSA-Leetcode/tree/master/0234-palindrome-linked-list) |
 | [0581-shortest-unsorted-continuous-subarray](https://github.com/ID-core/DSA-Leetcode/tree/master/0581-shortest-unsorted-continuous-subarray) |
+| [0844-backspace-string-compare](https://github.com/ID-core/DSA-Leetcode/tree/master/0844-backspace-string-compare) |
 ## Recursion
 |  |
 | ------- |
@@ -116,4 +119,8 @@ class Solution {
 |  |
 | ------- |
 | [0581-shortest-unsorted-continuous-subarray](https://github.com/ID-core/DSA-Leetcode/tree/master/0581-shortest-unsorted-continuous-subarray) |
+## Simulation
+|  |
+| ------- |
+| [0844-backspace-string-compare](https://github.com/ID-core/DSA-Leetcode/tree/master/0844-backspace-string-compare) |
 <!---LeetCode Topics End-->
