@@ -38,6 +38,7 @@ class Solution {
 | [0167-two-sum-ii-input-array-is-sorted](https://github.com/ID-core/DSA-Leetcode/tree/master/0167-two-sum-ii-input-array-is-sorted) |
 | [0209-minimum-size-subarray-sum](https://github.com/ID-core/DSA-Leetcode/tree/master/0209-minimum-size-subarray-sum) |
 | [0581-shortest-unsorted-continuous-subarray](https://github.com/ID-core/DSA-Leetcode/tree/master/0581-shortest-unsorted-continuous-subarray) |
+| [0713-subarray-product-less-than-k](https://github.com/ID-core/DSA-Leetcode/tree/master/0713-subarray-product-less-than-k) |
 | [0904-fruit-into-baskets](https://github.com/ID-core/DSA-Leetcode/tree/master/0904-fruit-into-baskets) |
 ## Two Pointers
 |  |
@@ -58,6 +59,7 @@ class Solution {
 | ------- |
 | [0167-two-sum-ii-input-array-is-sorted](https://github.com/ID-core/DSA-Leetcode/tree/master/0167-two-sum-ii-input-array-is-sorted) |
 | [0209-minimum-size-subarray-sum](https://github.com/ID-core/DSA-Leetcode/tree/master/0209-minimum-size-subarray-sum) |
+| [0713-subarray-product-less-than-k](https://github.com/ID-core/DSA-Leetcode/tree/master/0713-subarray-product-less-than-k) |
 ## Linked List
 |  |
 | ------- |
@@ -87,11 +89,13 @@ class Solution {
 | [0003-longest-substring-without-repeating-characters](https://github.com/ID-core/DSA-Leetcode/tree/master/0003-longest-substring-without-repeating-characters) |
 | [0209-minimum-size-subarray-sum](https://github.com/ID-core/DSA-Leetcode/tree/master/0209-minimum-size-subarray-sum) |
 | [0424-longest-repeating-character-replacement](https://github.com/ID-core/DSA-Leetcode/tree/master/0424-longest-repeating-character-replacement) |
+| [0713-subarray-product-less-than-k](https://github.com/ID-core/DSA-Leetcode/tree/master/0713-subarray-product-less-than-k) |
 | [0904-fruit-into-baskets](https://github.com/ID-core/DSA-Leetcode/tree/master/0904-fruit-into-baskets) |
 ## Prefix Sum
 |  |
 | ------- |
 | [0209-minimum-size-subarray-sum](https://github.com/ID-core/DSA-Leetcode/tree/master/0209-minimum-size-subarray-sum) |
+| [0713-subarray-product-less-than-k](https://github.com/ID-core/DSA-Leetcode/tree/master/0713-subarray-product-less-than-k) |
 ## String
 |  |
 | ------- |
