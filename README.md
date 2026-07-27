@@ -33,11 +33,13 @@ class Solution {
 |  |
 | ------- |
 | [0015-3sum](https://github.com/ID-core/DSA-Leetcode/tree/master/0015-3sum) |
+| [0016-3sum-closest](https://github.com/ID-core/DSA-Leetcode/tree/master/0016-3sum-closest) |
 | [0167-two-sum-ii-input-array-is-sorted](https://github.com/ID-core/DSA-Leetcode/tree/master/0167-two-sum-ii-input-array-is-sorted) |
 ## Two Pointers
 |  |
 | ------- |
 | [0015-3sum](https://github.com/ID-core/DSA-Leetcode/tree/master/0015-3sum) |
+| [0016-3sum-closest](https://github.com/ID-core/DSA-Leetcode/tree/master/0016-3sum-closest) |
 | [0167-two-sum-ii-input-array-is-sorted](https://github.com/ID-core/DSA-Leetcode/tree/master/0167-two-sum-ii-input-array-is-sorted) |
 ## Binary Search
 |  |
@@ -51,4 +53,5 @@ class Solution {
 |  |
 | ------- |
 | [0015-3sum](https://github.com/ID-core/DSA-Leetcode/tree/master/0015-3sum) |
+| [0016-3sum-closest](https://github.com/ID-core/DSA-Leetcode/tree/master/0016-3sum-closest) |
 <!---LeetCode Topics End-->
