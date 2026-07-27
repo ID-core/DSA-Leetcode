@@ -36,6 +36,7 @@ class Solution {
 | [0016-3sum-closest](https://github.com/ID-core/DSA-Leetcode/tree/master/0016-3sum-closest) |
 | [0167-two-sum-ii-input-array-is-sorted](https://github.com/ID-core/DSA-Leetcode/tree/master/0167-two-sum-ii-input-array-is-sorted) |
 | [0209-minimum-size-subarray-sum](https://github.com/ID-core/DSA-Leetcode/tree/master/0209-minimum-size-subarray-sum) |
+| [0581-shortest-unsorted-continuous-subarray](https://github.com/ID-core/DSA-Leetcode/tree/master/0581-shortest-unsorted-continuous-subarray) |
 | [0904-fruit-into-baskets](https://github.com/ID-core/DSA-Leetcode/tree/master/0904-fruit-into-baskets) |
 ## Two Pointers
 |  |
@@ -47,6 +48,7 @@ class Solution {
 | [0167-two-sum-ii-input-array-is-sorted](https://github.com/ID-core/DSA-Leetcode/tree/master/0167-two-sum-ii-input-array-is-sorted) |
 | [0202-happy-number](https://github.com/ID-core/DSA-Leetcode/tree/master/0202-happy-number) |
 | [0234-palindrome-linked-list](https://github.com/ID-core/DSA-Leetcode/tree/master/0234-palindrome-linked-list) |
+| [0581-shortest-unsorted-continuous-subarray](https://github.com/ID-core/DSA-Leetcode/tree/master/0581-shortest-unsorted-continuous-subarray) |
 | [0876-middle-of-the-linked-list](https://github.com/ID-core/DSA-Leetcode/tree/master/0876-middle-of-the-linked-list) |
 ## Binary Search
 |  |
@@ -66,6 +68,7 @@ class Solution {
 | ------- |
 | [0015-3sum](https://github.com/ID-core/DSA-Leetcode/tree/master/0015-3sum) |
 | [0016-3sum-closest](https://github.com/ID-core/DSA-Leetcode/tree/master/0016-3sum-closest) |
+| [0581-shortest-unsorted-continuous-subarray](https://github.com/ID-core/DSA-Leetcode/tree/master/0581-shortest-unsorted-continuous-subarray) |
 ## Hash Table
 |  |
 | ------- |
@@ -95,6 +98,7 @@ class Solution {
 | ------- |
 | [0143-reorder-list](https://github.com/ID-core/DSA-Leetcode/tree/master/0143-reorder-list) |
 | [0234-palindrome-linked-list](https://github.com/ID-core/DSA-Leetcode/tree/master/0234-palindrome-linked-list) |
+| [0581-shortest-unsorted-continuous-subarray](https://github.com/ID-core/DSA-Leetcode/tree/master/0581-shortest-unsorted-continuous-subarray) |
 ## Recursion
 |  |
 | ------- |
@@ -104,4 +108,12 @@ class Solution {
 |  |
 | ------- |
 | [0202-happy-number](https://github.com/ID-core/DSA-Leetcode/tree/master/0202-happy-number) |
+## Greedy
+|  |
+| ------- |
+| [0581-shortest-unsorted-continuous-subarray](https://github.com/ID-core/DSA-Leetcode/tree/master/0581-shortest-unsorted-continuous-subarray) |
+## Monotonic Stack
+|  |
+| ------- |
+| [0581-shortest-unsorted-continuous-subarray](https://github.com/ID-core/DSA-Leetcode/tree/master/0581-shortest-unsorted-continuous-subarray) |
 <!---LeetCode Topics End-->
