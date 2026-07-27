@@ -35,6 +35,7 @@ class Solution {
 | [0015-3sum](https://github.com/ID-core/DSA-Leetcode/tree/master/0015-3sum) |
 | [0016-3sum-closest](https://github.com/ID-core/DSA-Leetcode/tree/master/0016-3sum-closest) |
 | [0167-two-sum-ii-input-array-is-sorted](https://github.com/ID-core/DSA-Leetcode/tree/master/0167-two-sum-ii-input-array-is-sorted) |
+| [0209-minimum-size-subarray-sum](https://github.com/ID-core/DSA-Leetcode/tree/master/0209-minimum-size-subarray-sum) |
 ## Two Pointers
 |  |
 | ------- |
@@ -46,6 +47,7 @@ class Solution {
 |  |
 | ------- |
 | [0167-two-sum-ii-input-array-is-sorted](https://github.com/ID-core/DSA-Leetcode/tree/master/0167-two-sum-ii-input-array-is-sorted) |
+| [0209-minimum-size-subarray-sum](https://github.com/ID-core/DSA-Leetcode/tree/master/0209-minimum-size-subarray-sum) |
 ## Linked List
 |  |
 | ------- |
@@ -60,4 +62,12 @@ class Solution {
 |  |
 | ------- |
 | [0141-linked-list-cycle](https://github.com/ID-core/DSA-Leetcode/tree/master/0141-linked-list-cycle) |
+## Sliding Window
+|  |
+| ------- |
+| [0209-minimum-size-subarray-sum](https://github.com/ID-core/DSA-Leetcode/tree/master/0209-minimum-size-subarray-sum) |
+## Prefix Sum
+|  |
+| ------- |
+| [0209-minimum-size-subarray-sum](https://github.com/ID-core/DSA-Leetcode/tree/master/0209-minimum-size-subarray-sum) |
 <!---LeetCode Topics End-->
