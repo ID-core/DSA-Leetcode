@@ -40,6 +40,7 @@ class Solution {
 | ------- |
 | [0015-3sum](https://github.com/ID-core/DSA-Leetcode/tree/master/0015-3sum) |
 | [0016-3sum-closest](https://github.com/ID-core/DSA-Leetcode/tree/master/0016-3sum-closest) |
+| [0141-linked-list-cycle](https://github.com/ID-core/DSA-Leetcode/tree/master/0141-linked-list-cycle) |
 | [0167-two-sum-ii-input-array-is-sorted](https://github.com/ID-core/DSA-Leetcode/tree/master/0167-two-sum-ii-input-array-is-sorted) |
 ## Binary Search
 |  |
@@ -49,9 +50,14 @@ class Solution {
 |  |
 | ------- |
 | [0083-remove-duplicates-from-sorted-list](https://github.com/ID-core/DSA-Leetcode/tree/master/0083-remove-duplicates-from-sorted-list) |
+| [0141-linked-list-cycle](https://github.com/ID-core/DSA-Leetcode/tree/master/0141-linked-list-cycle) |
 ## Sorting
 |  |
 | ------- |
 | [0015-3sum](https://github.com/ID-core/DSA-Leetcode/tree/master/0015-3sum) |
 | [0016-3sum-closest](https://github.com/ID-core/DSA-Leetcode/tree/master/0016-3sum-closest) |
+## Hash Table
+|  |
+| ------- |
+| [0141-linked-list-cycle](https://github.com/ID-core/DSA-Leetcode/tree/master/0141-linked-list-cycle) |
 <!---LeetCode Topics End-->
