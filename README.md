@@ -36,6 +36,7 @@ class Solution {
 | [0016-3sum-closest](https://github.com/ID-core/DSA-Leetcode/tree/master/0016-3sum-closest) |
 | [0018-4sum](https://github.com/ID-core/DSA-Leetcode/tree/master/0018-4sum) |
 | [0053-maximum-subarray](https://github.com/ID-core/DSA-Leetcode/tree/master/0053-maximum-subarray) |
+| [0152-maximum-product-subarray](https://github.com/ID-core/DSA-Leetcode/tree/master/0152-maximum-product-subarray) |
 | [0167-two-sum-ii-input-array-is-sorted](https://github.com/ID-core/DSA-Leetcode/tree/master/0167-two-sum-ii-input-array-is-sorted) |
 | [0209-minimum-size-subarray-sum](https://github.com/ID-core/DSA-Leetcode/tree/master/0209-minimum-size-subarray-sum) |
 | [0581-shortest-unsorted-continuous-subarray](https://github.com/ID-core/DSA-Leetcode/tree/master/0581-shortest-unsorted-continuous-subarray) |
@@ -149,4 +150,5 @@ class Solution {
 |  |
 | ------- |
 | [0053-maximum-subarray](https://github.com/ID-core/DSA-Leetcode/tree/master/0053-maximum-subarray) |
+| [0152-maximum-product-subarray](https://github.com/ID-core/DSA-Leetcode/tree/master/0152-maximum-product-subarray) |
 <!---LeetCode Topics End-->
