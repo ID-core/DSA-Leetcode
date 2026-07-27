@@ -42,6 +42,7 @@ class Solution {
 | [0581-shortest-unsorted-continuous-subarray](https://github.com/ID-core/DSA-Leetcode/tree/master/0581-shortest-unsorted-continuous-subarray) |
 | [0713-subarray-product-less-than-k](https://github.com/ID-core/DSA-Leetcode/tree/master/0713-subarray-product-less-than-k) |
 | [0904-fruit-into-baskets](https://github.com/ID-core/DSA-Leetcode/tree/master/0904-fruit-into-baskets) |
+| [1186-maximum-subarray-sum-with-one-deletion](https://github.com/ID-core/DSA-Leetcode/tree/master/1186-maximum-subarray-sum-with-one-deletion) |
 ## Two Pointers
 |  |
 | ------- |
@@ -151,4 +152,5 @@ class Solution {
 | ------- |
 | [0053-maximum-subarray](https://github.com/ID-core/DSA-Leetcode/tree/master/0053-maximum-subarray) |
 | [0152-maximum-product-subarray](https://github.com/ID-core/DSA-Leetcode/tree/master/0152-maximum-product-subarray) |
+| [1186-maximum-subarray-sum-with-one-deletion](https://github.com/ID-core/DSA-Leetcode/tree/master/1186-maximum-subarray-sum-with-one-deletion) |
 <!---LeetCode Topics End-->
